@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=3 uid="uid://cajyk6j13nkd1"]
+
+[ext_resource type="Script" uid="uid://vqosmb6fup4m" path="res://Scenes/File/file.gd" id="1_1llim"]
+[ext_resource type="Texture2D" uid="uid://ukwmg6pm1ff1" path="res://Scenes/File/map.png" id="2_r14rv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r5ifs"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_1a70r"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_26dyf"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_htsos"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ine4e"]
+
+[node name="File" type="Control" groups=["file"]]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1llim")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapLabel" type="Label" parent="CanvasLayer/ColorRect" groups=["map"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -265.0
+offset_right = 130.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mapa del piso 2"
+label_settings = SubResource("LabelSettings_r5ifs")
+
+[node name="Letter1Label" type="Label" parent="CanvasLayer/ColorRect" groups=["letter1"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -207.0
+offset_right = 131.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 1"
+label_settings = SubResource("LabelSettings_1a70r")
+
+[node name="Letter2Label" type="Label" parent="CanvasLayer/ColorRect" groups=["letter2"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -153.0
+offset_right = 130.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 2"
+label_settings = SubResource("LabelSettings_26dyf")
+
+[node name="Exit" type="Label" parent="CanvasLayer/ColorRect" groups=["exit"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 468.0
+offset_top = -36.0
+offset_right = 555.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salir"
+label_settings = SubResource("LabelSettings_htsos")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1025.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapTexture" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r14rv")
+
+[node name="Letter1Content" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 350.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey, ahora que has llegado hasta aquí, ya estás en condiciones de conocer los pormenores de esta historia. 
+Seguramente habrás oído hablar del conglomerado polifarmacéutico 'Aluminum Pharma'. Pues bien, ellos son quienes están detrás de que un alto funcionario del gobierno de Zunanda te incriminara y te hiciera encarcelar. Ellos tienen un acuerdo con el gobierno por el cual van a estar a cargo de la implementación del plan de salud. Para ellos esto es un negocio, y la gente como tú les molesta. La idea es que a quien no pueda pagar, se le brinde 'opciones', pero de ninguna forma debe esa persona recibir atención médica gratuita. Tú has sido el más reacio de los Médicos sin Territorio a abandonar el país, gracias a que tu primo, abogado, conoce bien la legislación internacional. Es por eso que la mano derecha del Ministro de Salud ha tomado la decisión de matarte. No es por acabar contigo en sí que lo hace, sino porque quiere que tu muerte sirva de escarmiento a los demás miembros de Médicos sin Territorio en el país. Ahora ya sabes la verdad. No dejes que te afecte. Mantén la mente en frío y recuerda que si vemos que tu vida corre peligro, intervendremos. En el pasillo donde tu estás hay unas rejillas que no hacen ruido. Te darás cuenta cuando las veas. Sólo ponte delante de ellas y no las toques si no estás seguro. Te llevarán adonde tienes que llegar.
+¡Sigue adelante, Geoffrey Collins!
+Tu amigo,
+
+T.F.W."
+label_settings = SubResource("LabelSettings_ine4e")
+autowrap_mode = 3
+
+[node name="Letter2Content" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 368.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey,
+
+si ya has conocido a Amir, vas por buen camino. Él te dará información sobre algunos ítems que te serán de utilidad. Deberás continuar hasta la lavandería. Ten especial cuidado con el jefe de pabellón, Benjamin Kaluga, boxeador profesional, y con su mano derecha, Mbeki Sharaka, que es mucho peor y tiene un particular odio por la gente com tú. Suerte, Geoffrey Collins. 
+Tu amigo,
+
+T.F.W.\""
+label_settings = SubResource("LabelSettings_ine4e")
+autowrap_mode = 3

@@ -1,0 +1,672 @@
+[gd_scene load_steps=32 format=3 uid="uid://dyeqc6xqhur6h"]
+
+[ext_resource type="PackedScene" uid="uid://d0jl63uysyprs" path="res://Scenes/Scene2_3/Stages/stage.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dibjx04shxomg" path="res://Scenes/Scene2_3/Characters/player.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ck61076s55mdx" path="res://Scenes/Scene2_3/scene_2_3.gd" id="1_wbkar"]
+[ext_resource type="PackedScene" uid="uid://d4jidq0jmhpyq" path="res://Scenes/Scene2_3/Characters/sharaka.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://co5nav25dnm7o" path="res://Scenes/Scene2_3/game_manager.gd" id="2_ri102"]
+[ext_resource type="Script" uid="uid://bmynsni83rcd3" path="res://Scenes/UI/UI.gd" id="4_46ng5"]
+[ext_resource type="Texture2D" uid="uid://ctke56gqsvpij" path="res://Scenes/UI/emptycell.png" id="5_v36tb"]
+[ext_resource type="Script" uid="uid://vqosmb6fup4m" path="res://Scenes/File/file.gd" id="6_wbkar"]
+[ext_resource type="Script" uid="uid://uoqtegtjar2l" path="res://Core/Resources/CharacterConfig.gd" id="7_lk7wi"]
+[ext_resource type="Texture2D" uid="uid://ukwmg6pm1ff1" path="res://Scenes/File/map.png" id="7_ri102"]
+[ext_resource type="Script" uid="uid://b8m8dbg64vi5n" path="res://Core/Resources/CharacterStats.gd" id="8_cmen6"]
+[ext_resource type="Texture2D" uid="uid://0x6yw3nwnn2h" path="res://Scenes/UI/help.png" id="10_ri102"]
+[ext_resource type="AudioStream" uid="uid://ch8etf6elxxcu" path="res://Sound/SharakaFinal.mp3" id="13_4m2x5"]
+
+[sub_resource type="Resource" id="Resource_yah20"]
+script = ExtResource("8_cmen6")
+max_health = 100
+starting_health = 0
+can_regenerate = false
+regeneration_rate = 0.0
+speed = 50.0
+acceleration = 10.0
+friction = 10.0
+base_damage = 10
+power_damage = 20
+attack_animations = Array[String](["punch"])
+combo_window = 0.5
+jump_intensity = 150.0
+knockback_intensity = 150.0
+knockdown_intensity = 150.0
+flight_speed = 200.0
+gravity = 600.0
+grounded_duration = 0.5
+hurt_duration = 0.5
+stun_duration = 1.0
+attack_cooldown = 1.0
+metadata/_custom_type_script = "uid://b8m8dbg64vi5n"
+
+[sub_resource type="Resource" id="Resource_p5r0a"]
+script = ExtResource("7_lk7wi")
+stats = SubResource("Resource_yah20")
+character_name = "Character"
+is_player = false
+can_respawn = false
+can_be_stunned = true
+is_boss = false
+animation_overrides = {}
+chase_distance = 300.0
+attack_distance = 40.0
+disengage_distance = 500.0
+metadata/_custom_type_script = "uid://uoqtegtjar2l"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(403, 31.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(417, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(12, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we02t"]
+size = Vector2(13.7281, 70.1626)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0scv"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_we02t"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_4m2x5"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_lk7wi"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmen6"]
+font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yah20"]
+bg_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p5r0a"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ecgv"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_i52uo"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_junbo"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_d8nut"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_cst0a"]
+
+[node name="Scene2_3" type="Node2D" node_paths=PackedStringArray("enemy_name")]
+process_mode = 3
+script = ExtResource("1_wbkar")
+enemy_name = NodePath("CanvasLayer/UI/EnemyName")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_ri102")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 1)
+anchor_mode = 0
+zoom = Vector2(2.9, 3.2)
+
+[node name="Stage" parent="." instance=ExtResource("1_h2yge")]
+
+[node name="Pausables" type="Node2D" parent="."]
+process_mode = 1
+y_sort_enabled = true
+
+[node name="Player" parent="Pausables" node_paths=PackedStringArray("health_bar") instance=ExtResource("1_ig7tw")]
+position = Vector2(100, 197)
+scale = Vector2(4.5, 4.5)
+health_bar = NodePath("../../CanvasLayer/UI/HealthBar")
+
+[node name="Sharaka" parent="Pausables" node_paths=PackedStringArray("player", "health_bar") instance=ExtResource("2_0xm2m")]
+position = Vector2(356, 198)
+scale = Vector2(2.5, 2.5)
+collision_mask = 2
+player = NodePath("../Player")
+config = SubResource("Resource_p5r0a")
+health_bar = NodePath("../../CanvasLayer/UI/EnemyHealthBar")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(207, 149)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, 0.125)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(209, 214)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(72, 178)
+rotation = 1.11978
+scale = Vector2(1, 0.44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(398, 183)
+rotation = -0.877178
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_we02t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_46ng5")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 486.0
+offset_right = 1148.0
+offset_bottom = 644.0
+size_flags_vertical = 8
+color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 2.0
+offset_top = 494.0
+offset_right = 1150.0
+offset_bottom = 642.0
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="BoxContainer" parent="CanvasLayer/UI/BoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="ExamineContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExamineLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/ExamineContainer"]
+layout_mode = 2
+text = "EXAMINAR"
+label_settings = SubResource("LabelSettings_m0scv")
+
+[node name="UseContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UseLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/UseContainer"]
+layout_mode = 2
+text = "USAR"
+label_settings = SubResource("LabelSettings_we02t")
+
+[node name="EquipContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EquipLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/EquipContainer"]
+layout_mode = 2
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_4m2x5")
+
+[node name="ArchiveContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ArchiveLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/ArchiveContainer"]
+layout_mode = 2
+text = "ARCHIVO"
+label_settings = SubResource("LabelSettings_lk7wi")
+
+[node name="ItemsFlowContainer" type="FlowContainer" parent="CanvasLayer/UI/BoxContainer"]
+custom_minimum_size = Vector2(432, 128)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Item1Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Item1" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item1Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber1" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item1Container/Item1"]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item2Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item2" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item2Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber2" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item2Container/Item2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item3Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item3" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item3Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber3" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item3Container/Item3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item4Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item4" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item4Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber4" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item4Container/Item4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item5Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item5" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item5Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber5" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item5Container/Item5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 37.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item6Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item6" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item6Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber6" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item6Container/Item6"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item7Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item7" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item7Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber7" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item7Container/Item7"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item8Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item8" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item8Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber8" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item8Container/Item8"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 42.0
+offset_right = 62.0
+offset_bottom = 66.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item9Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item9" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item9Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber9" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item9Container/Item9"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 44.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item10Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item10" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item10Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber10" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item10Container/Item10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item11Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item11" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item11Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber11" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item11Container/Item11"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item12Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item12" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item12Container"]
+layout_mode = 2
+texture = ExtResource("5_v36tb")
+
+[node name="ItemNumber12" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item12Container/Item12"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextAreaContainer" type="BoxContainer" parent="CanvasLayer/UI/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical = true
+
+[node name="TextArea" type="Label" parent="CanvasLayer/UI/BoxContainer/TextAreaContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_cmen6")
+
+[node name="Name" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 124.0
+offset_bottom = 23.0
+text = "COLLINS"
+
+[node name="EnemyName" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 934.0
+offset_right = 1025.0
+offset_bottom = 23.0
+text = "COLLINS"
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 221.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_yah20")
+value = 100.0
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 930.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_yah20")
+value = 100.0
+
+[node name="MainLabel" type="Label" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 535.0
+offset_top = 463.0
+offset_right = 575.0
+offset_bottom = 499.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_p5r0a")
+horizontal_alignment = 1
+
+[node name="HelpSprite" type="Sprite2D" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+position = Vector2(588, 416)
+
+[node name="File" type="Control" parent="CanvasLayer" groups=["file"]]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_wbkar")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/File"]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/File/CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapLabel" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["map"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -265.0
+offset_right = 130.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mapa del piso 2"
+label_settings = SubResource("LabelSettings_6ecgv")
+
+[node name="Letter1Label" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["letter1"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -207.0
+offset_right = 131.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 1"
+label_settings = SubResource("LabelSettings_i52uo")
+
+[node name="Letter2Label" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["letter2"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -153.0
+offset_right = 130.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 2"
+label_settings = SubResource("LabelSettings_junbo")
+
+[node name="Exit" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["exit"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 468.0
+offset_top = -36.0
+offset_right = 555.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salir"
+label_settings = SubResource("LabelSettings_d8nut")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+offset_right = 1025.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapTexture" type="TextureRect" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_ri102")
+
+[node name="Letter1Content" type="Label" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 350.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey, ahora que has llegado hasta aquí, ya estás en condiciones de conocer los pormenores de esta historia. 
+Seguramente habrás oído hablar del conglomerado polifarmacéutico 'Aluminum Pharma'. Pues bien, ellos son quienes están detrás de que un alto funcionario del gobierno de Zunanda te incriminara y te hiciera encarcelar. Ellos tienen un acuerdo con el gobierno por el cual van a estar a cargo de la implementación del plan de salud. Para ellos esto es un negocio, y la gente como tú les molesta. La idea es que a quien no pueda pagar, se le brinde 'opciones', pero de ninguna forma debe esa persona recibir atención médica gratuita. Tú has sido el más reacio de los Médicos sin Territorio a abandonar el país, gracias a que tu primo, abogado, conoce bien la legislación internacional. Es por eso que la mano derecha del Ministro de Salud ha tomado la decisión de matarte. No es por acabar contigo en sí que lo hace, sino porque quiere que tu muerte sirva de escarmiento a los demás miembros de Médicos sin Territorio en el país. Ahora ya sabes la verdad. No dejes que te afecte. Mantén la mente en frío y recuerda que si vemos que tu vida corre peligro, intervendremos. En el pasillo donde tu estás hay unas rejillas que no hacen ruido. Te darás cuenta cuando las veas. Sólo ponte delante de ellas y no las toques si no estás seguro. Te llevarán adonde tienes que llegar.
+¡Sigue adelante, Geoffrey Collins!
+Tu amigo,
+
+T.F.W."
+label_settings = SubResource("LabelSettings_cst0a")
+autowrap_mode = 3
+
+[node name="Letter2Content" type="Label" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 368.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey,
+
+si ya has conocido a Amir, vas por buen camino. Él te dará información sobre algunos ítems que te serán de utilidad. Deberás continuar hasta la lavandería. Ten especial cuidado con el jefe de pabellón, Benjamin Kaluga, boxeador profesional, y con su mano derecha, Mbeki Sharaka, que es mucho peor y tiene un particular odio por la gente com tú. Suerte, Geoffrey Collins. 
+Tu amigo,
+
+T.F.W.\""
+label_settings = SubResource("LabelSettings_cst0a")
+autowrap_mode = 3
+
+[node name="Help" type="Control" parent="CanvasLayer"]
+z_index = 1
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/Help"]
+layer = 3
+visible = false
+
+[node name="HelpScreen" type="Sprite2D" parent="CanvasLayer/Help/CanvasLayer"]
+scale = Vector2(1.44, 1.07833)
+texture = ExtResource("10_ri102")
+centered = false
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_4m2x5")
+autoplay = true
+parameters/looping = true

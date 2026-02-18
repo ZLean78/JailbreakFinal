@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1748191806
+icon.svg::CompressedTexture2D::9004363797132709836::1748189278::1748189288::1::::<><>::
+::res://Scenes/::1748191712
+::res://Scenes/Player/::1748191806
+player.tscn::PackedScene::578249512989520641::1748191728::0::1::::<><>::
+::res://Scenes/Player/Sprites/::1748191806
+Player.svg::CompressedTexture2D::8755933402449087019::1748191775::1748191806::1::::<><>::
+::res://Scenes/Scene1/::1748191685
+map.tscn::PackedScene::5365331590853492992::1748191685::0::1::::<><>::uid://cc27maibjmkva::::res://Scenes/Scene1/Sprites/Sheet1.png
+scene_1.tscn::PackedScene::1867115890008658247::1748189356::0::1::::<><>::
+::res://Scenes/Scene1/Sprites/::1748190570
+Sheet1.png::CompressedTexture2D::4970921639733648130::1656085780::1748190570::1::::<><>::

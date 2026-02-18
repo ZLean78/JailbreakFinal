@@ -1,0 +1,45 @@
+{
+  "time_per_dialogue": 8,
+  "next_scene": "res://Scenes/Scene2_4/scene_2_4.tscn",
+  "end_delay": 2,
+  "initial_audio": "res://Sound/Shock.mp3",
+  "images": [
+    "01_angry_collins.png",
+    "02_remembrance.jpeg",
+    "03_kicking.png",
+    "04_black.png",
+    "05_sharaka_floor.png",
+    "06_leaving.png"
+  ],
+  "audio_switches": {
+    "3": "res://Sound/DecisiveMoment.mp3"
+  },
+  "dialogues": [
+    [
+      "Las palabras de Sharaka resuenan en la mente de Collins:",
+      "'El mundo está bien tal cual está... Gracias a este sistema, mis cuatro hijos pueden comer...'",
+      "'Tal vez parezca que no, pero yo tengo mis motivos para odiarte...'"
+    ],
+    [
+      "Un recuerdo del pasado invade a Collins.",
+      "Voz del pasado: '¡Vamos, Collins! ¡Muévete, patea ese balón de una buena vez!'"
+    ],
+    [
+      "¡CRACK!",
+      "Collins conecta una patada devastadora."
+    ],
+    [
+      "Collins: ¡Hora de dormir, Sharaka!",
+      "Collins saca el sedante que encontró en la lavandería.",
+      "Le inyecta el contenido a Sharaka, quien cae inconsciente."
+    ],
+    [
+      "Sharaka yace en el suelo, completamente dormido.",
+      "No despertará por varias horas."
+    ],
+    [
+      "Collins: Hasta luego, 'amigo'.",
+      "Tengo que seguir adelante. La salida está cerca."
+    ]
+  ]
+}

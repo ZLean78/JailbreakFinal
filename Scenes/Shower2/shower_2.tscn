@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://jgsa2dywthhn"]
+
+[ext_resource type="Texture2D" uid="uid://bhfscclaq40vm" path="res://Scenes/Shower/Shower.png" id="4_sl15c"]
+
+[node name="Shower2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 6)
+scale = Vector2(0.752475, 0.906977)
+texture = ExtResource("4_sl15c")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, 41, -38, 42, -40, -34, 33, -35, 34, 40, 21, 39, 19, -16, -24, -15)

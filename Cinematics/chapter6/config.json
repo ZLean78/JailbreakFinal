@@ -1,0 +1,34 @@
+{
+  "time_per_dialogue": 10,
+  "next_scene": "res://Scenes/Scene2_5/scene_2_5.tscn",
+  "end_delay": 12,
+  "initial_audio": "res://Sound/Shock.mp3",
+  "images": [
+    "01.png",
+    "02.png",
+    "03.png"
+  ],
+  "audio_switches": {
+    "2": "res://Sound/DecisiveMoment.mp3"
+  },
+  "dialogues": [
+    [
+      "Collins llega a la sala de calderas.",
+      "Un hombre enorme bloquea el camino."
+    ],
+    [
+      "Kaluga: Así que tú eres el famoso doctor.",
+      "He oído hablar de ti. Sharaka me contó algunas cosas interesantes."
+    ],
+    [
+      "Collins: Sólo quiero salir de aquí. No busco pelea.",
+      "Kaluga: Todos dicen eso... hasta que les doy una razón para pelear."
+    ],
+    [
+      "Kaluga: No voy a llamar a los guardias.",
+      "Esto lo termino yo, personalmente.",
+      "Dicen que eres buen luchador. Vamos a comprobarlo."
+    ]
+  ],
+  "image_sequence":[1,2,3,3]
+}

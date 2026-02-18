@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0jl63uysyprs"]
+
+[ext_resource type="Texture2D" uid="uid://2kdnh0eeg7ci" path="res://Scenes/Scene2_3/art/backgrounds/background.png" id="1_mvwo2"]
+
+[node name="Stage" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.550409, 0.550409)
+texture = ExtResource("1_mvwo2")
+centered = false
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 202)

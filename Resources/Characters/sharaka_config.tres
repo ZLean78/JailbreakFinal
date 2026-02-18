@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterConfig" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Core/Resources/CharacterConfig.gd" id="1"]
+[ext_resource type="Resource" path="res://Resources/Characters/sharaka_stats.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+stats = ExtResource("2")
+character_name = "Sharaka"
+is_player = false
+can_respawn = false
+can_be_stunned = true
+is_boss = false
+animation_overrides = {}
+chase_distance = 300.0
+attack_distance = 50.0
+disengage_distance = 500.0

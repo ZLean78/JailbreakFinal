@@ -1,0 +1,365 @@
+[gd_scene load_steps=10 format=3 uid="uid://34pw8om430yo"]
+
+[ext_resource type="Script" uid="uid://bmynsni83rcd3" path="res://Scenes/UI/UI.gd" id="1_clhwp"]
+[ext_resource type="Texture2D" uid="uid://ctke56gqsvpij" path="res://Scenes/UI/emptycell.png" id="1_ymg7o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d4sgr"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_hof60"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_2imn0"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ise11"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_irres"]
+font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cvjs"]
+bg_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_636u5"]
+font_size = 26
+
+[node name="UI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_clhwp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 2.0
+offset_top = 486.0
+offset_right = 1148.0
+offset_bottom = 644.0
+size_flags_vertical = 8
+color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 2.0
+offset_top = 494.0
+offset_right = 1150.0
+offset_bottom = 642.0
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="ExamineContainer" type="CenterContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExamineLabel" type="Label" parent="BoxContainer/VBoxContainer/ExamineContainer"]
+layout_mode = 2
+text = "EXAMINAR"
+label_settings = SubResource("LabelSettings_d4sgr")
+
+[node name="UseContainer" type="CenterContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UseLabel" type="Label" parent="BoxContainer/VBoxContainer/UseContainer"]
+layout_mode = 2
+text = "USAR"
+label_settings = SubResource("LabelSettings_hof60")
+
+[node name="EquipContainer" type="CenterContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EquipLabel" type="Label" parent="BoxContainer/VBoxContainer/EquipContainer"]
+layout_mode = 2
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_2imn0")
+
+[node name="ArchiveContainer" type="CenterContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ArchiveLabel" type="Label" parent="BoxContainer/VBoxContainer/ArchiveContainer"]
+layout_mode = 2
+text = "ARCHIVO"
+label_settings = SubResource("LabelSettings_ise11")
+
+[node name="ItemsFlowContainer" type="FlowContainer" parent="BoxContainer"]
+custom_minimum_size = Vector2(432, 128)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Item1Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Item1" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item1Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber1" type="Label" parent="BoxContainer/ItemsFlowContainer/Item1Container/Item1"]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item2Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item2" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item2Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber2" type="Label" parent="BoxContainer/ItemsFlowContainer/Item2Container/Item2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item3Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item3" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item3Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber3" type="Label" parent="BoxContainer/ItemsFlowContainer/Item3Container/Item3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item4Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item4" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item4Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber4" type="Label" parent="BoxContainer/ItemsFlowContainer/Item4Container/Item4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item5Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item5" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item5Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber5" type="Label" parent="BoxContainer/ItemsFlowContainer/Item5Container/Item5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 37.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item6Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item6" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item6Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber6" type="Label" parent="BoxContainer/ItemsFlowContainer/Item6Container/Item6"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item7Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item7" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item7Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber7" type="Label" parent="BoxContainer/ItemsFlowContainer/Item7Container/Item7"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item8Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item8" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item8Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber8" type="Label" parent="BoxContainer/ItemsFlowContainer/Item8Container/Item8"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 42.0
+offset_right = 62.0
+offset_bottom = 66.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item9Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item9" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item9Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber9" type="Label" parent="BoxContainer/ItemsFlowContainer/Item9Container/Item9"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 44.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item10Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item10" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item10Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber10" type="Label" parent="BoxContainer/ItemsFlowContainer/Item10Container/Item10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item11Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item11" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item11Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber11" type="Label" parent="BoxContainer/ItemsFlowContainer/Item11Container/Item11"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item12Container" type="CenterContainer" parent="BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item12" type="TextureRect" parent="BoxContainer/ItemsFlowContainer/Item12Container"]
+layout_mode = 2
+texture = ExtResource("1_ymg7o")
+
+[node name="ItemNumber12" type="Label" parent="BoxContainer/ItemsFlowContainer/Item12Container/Item12"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextAreaContainer" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical = true
+
+[node name="TextArea" type="Label" parent="BoxContainer/TextAreaContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_irres")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -2.0
+offset_right = 129.0
+offset_bottom = 21.0
+text = "COLLINS"
+
+[node name="EnemyName" type="Label" parent="."]
+visible = true
+layout_mode = 0
+offset_left = 934.0
+offset_right = 1025.0
+offset_bottom = 23.0
+text = "KALUGA"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 221.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_5cvjs")
+value = 100.0
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="."]
+visible = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 930.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_5cvjs")
+value = 100.0
+
+[node name="MainLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = 489.0
+offset_right = 103.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_636u5")
+autowrap_mode = 3
+
+[node name="HelpSprite" type="Sprite2D" parent="."]
+position = Vector2(590, 512)

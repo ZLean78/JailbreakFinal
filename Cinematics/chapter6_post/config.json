@@ -1,0 +1,74 @@
+{
+  "time_per_dialogue": 10,
+  "next_cinematic": "chapter7",
+  "end_delay": 12,
+  "uses_images": true,
+  "initial_audio": "res://Sound/Shock.mp3",
+  "images": [
+    "01.png",
+    "02.png",
+    "03.png",
+    "04.png",
+    "05.png",
+    "06.png",
+    "07.png",
+    "08.png",
+    "09.png",
+    "10.png"
+  ],
+  "audio_switches": {
+    "4": "res://Sound/DecisiveMoment.mp3",
+    "11": "res://Sound/Helicopter.mp3"
+  },
+  "dialogues": [
+    [
+      "Kaluga se detiene. Mira a Collins con nuevos ojos.",
+      "Kaluga: Impresionante. Hace años que nadie me da pelea así."
+    ],
+    [
+      "Kaluga: Sabes, Sharaka me contó sobre ti. Sobre su esposa.",
+      "Decía que tenías un amorío con ella. Con Anabelle."
+    ],
+    [
+      "Collins: ¿Qué? Anabelle era mi enfermera. Nunca tuve nada con ella.",
+      "Kaluga: Eso pensé. Sharaka fue manipulado."
+    ],
+    [
+      "Kaluga: Aluminum Pharma le metió esa idea en la cabeza.",
+      "Le hicieron creer que su mujer lo engañaba contigo.",
+      "Entonces él le ordenó a Anabelle que pusiera los diamantes en tu bolso..."
+    ],
+    [
+      "Kaluga: ...como 'prueba de lealtad'. Y ella lo hizo.",
+      "Todos fueron peones en el juego de esa corporación."
+    ],
+    [
+      "Collins procesa la verdad. Anabelle, su enfermera de confianza...",
+      "Ella plantó los diamantes. Todo fue una trampa de Aluminum Pharma."
+    ],
+    [
+      "Kaluga: He visto suficiente corrupción en esta prisión.",
+      "Tú peleas por algo real. Mereces salir de aquí."
+    ],
+    [
+      "Kaluga camina hacia los controles de la caldera.",
+      "Kaluga: Esta caldera está conectada al muro exterior.",
+      "Si la sobrecargo..."
+    ],
+    [
+      "Kaluga: ¡CORRE! ¡AHORA!",
+      "Collins: ¡Gracias, Kaluga!"
+    ],
+    [
+      "¡BOOM!",
+      "La explosión sacude la prisión.",
+      "En medio del caos, Collins escapa hacia la libertad."
+    ],
+    ["Collins huye con sigilo, lo más rápido que puede,",
+     "aprovechando que los guardias han dejado su puesto",
+     "debido al escándalo de la explosión de la caldera."],
+    ["En medio de la noche, Collins avista un helicópero",
+     "en el cielo. Walton y Mellinguer han venido por él."]
+  ],
+  "image_sequence":[1,2,3,4,5,3,6,6,7,8,9,10]
+}

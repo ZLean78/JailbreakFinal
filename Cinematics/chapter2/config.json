@@ -1,0 +1,58 @@
+{
+  "time_per_dialogue": 8,
+  "next_scene": "res://Scenes/Scene2/scene_2.tscn",
+  "end_delay": 12,
+  "initial_audio": "res://Sound/FinaleCelesta.mp3",
+  "images": [
+    "01_collins_letter.jpeg",
+    "02.png",
+    "03.png"
+  ],
+  "audio_switches": {},
+  "dialogues": [
+    [
+      "Querido Geoffrey,",
+      "ahora que has llegado hasta aquí, ya estás en condiciones de conocer los pormenores de esta historia."
+    ],
+    [
+      "Seguramente habrás oído hablar del conglomerado polifarmacéutico 'Aluminum Pharma'.",
+      "Pues bien, ellos son quienes están detrás de lo que te ha ocurrido."      
+    ],
+    [
+      "Ellos quieren el monopolio de la salud, aquí en Zalimbwe.",
+      "Hacen negocios turbios con el gobierno."
+    ],
+    [
+      "La gente como tú les molesta, porque les impide cumplir sus metas."
+    ],
+    [
+      "Tú has sido el más reacio de los miembros de Médicos sin Territorio a abandonar el país,",
+      "gracias a que tu primo, abogado, conoce bien la legislación internacional.",
+      "Es por eso que el vice-CEO de Aluminum Pharma",
+      "ha tomado la decisión de matarte."
+    ],
+    [
+      "No es por acabar contigo en sí que lo hace,",
+      "sino porque quiere que tu muerte sirva de",
+      "escarmiento a los demás Médicos sin Territorio en el país."
+    ],
+    [
+      "Ahora ya sabes la verdad. No dejes que te afecte.",
+      "Mantén la mente en frío y recuerda",
+      "que si vemos que tu vida corre peligro, intervendremos."
+    ],
+    [
+      "En el pasillo donde estás hay unas rejillas que no hacen ruido.",
+      "Te darás cuenta cuando las veas. Sólo ponte delante de ellas",
+      "y no las toques si no estás seguro. Te llevarán adonde tienes que llegar."
+    ],
+    [
+      "¡Sigue adelante, Geoffrey Collins!",
+      "Tu amigo,",
+      "T.F.W.",
+      "",
+      "Collins: Increíble..."
+    ]
+  ],
+  "image_sequence": [1, 2, 3, 3, 1, 1, 1, 1, 1]
+}

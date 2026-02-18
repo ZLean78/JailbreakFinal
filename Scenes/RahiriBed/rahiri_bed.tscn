@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckvhxh3jaabvf"]
+
+[ext_resource type="Script" uid="uid://d3mifxr8dtp8a" path="res://Scenes/RahiriBed/rahiri_bed.gd" id="1_7pdls"]
+[ext_resource type="Texture2D" uid="uid://eoppc0u7gqew" path="res://Resources/Textures/rahiriAndBeds1.png" id="2_3256m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ogym"]
+size = Vector2(38, 60)
+
+[sub_resource type="Animation" id="Animation_3256m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_85vqo"]
+resource_name = "Sleep"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_7pdls"]
+resource_name = "empty"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uxsv6"]
+_data = {
+&"RESET": SubResource("Animation_3256m"),
+&"Sleep": SubResource("Animation_85vqo"),
+&"empty": SubResource("Animation_7pdls")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85vqo"]
+size = Vector2(38, 61)
+
+[node name="RahiriBed" type="StaticBody2D"]
+collision_mask = 66
+script = ExtResource("1_7pdls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.65012, 0.65012)
+texture = ExtResource("2_3256m")
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_2ogym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uxsv6")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_85vqo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

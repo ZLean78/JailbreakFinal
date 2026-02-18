@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd0k7a5s8ctuw"]
+
+[ext_resource type="PackedScene" uid="uid://buu1cm8antw4r" path="res://scenes/characters/character.tscn" id="1_y5dvh"]
+
+[node name="BasicEnemy" instance=ExtResource("1_y5dvh")]
+
+[editable path="DamageEmitter"]

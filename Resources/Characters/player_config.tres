@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterConfig" load_steps=3 format=3 uid="uid://70dijq4iakyp"]
+
+[ext_resource type="Script" uid="uid://uoqtegtjar2l" path="res://Core/Resources/CharacterConfig.gd" id="1"]
+[ext_resource type="Resource" uid="uid://bqmlh3xa0xgpk" path="res://Resources/Characters/player_stats.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+stats = ExtResource("2")
+character_name = "Player"
+is_player = true
+can_respawn = true
+can_be_stunned = false
+is_boss = false
+animation_overrides = {}
+chase_distance = 300.0
+attack_distance = 50.0
+disengage_distance = 500.0

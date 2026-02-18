@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbg4tnbkyuopb"]
+
+[ext_resource type="Script" uid="uid://coi34pg3n8e68" path="res://Scenes/MyBed/my_bed.gd" id="1_kyy2u"]
+[ext_resource type="Texture2D" uid="uid://chlypmou4o6ym" path="res://Resources/Textures/MyBed.png" id="2_kyy2u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paf2h"]
+atlas = ExtResource("2_kyy2u")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrx6q"]
+atlas = ExtResource("2_kyy2u")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrx6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paf2h")
+}],
+"loop": true,
+"name": &"InBed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrx6q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7al0"]
+size = Vector2(72, 92)
+
+[node name="MyBed" type="Node2D"]
+script = ExtResource("1_kyy2u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.5, -2)
+scale = Vector2(1.10938, 0.958333)
+sprite_frames = SubResource("SpriteFrames_lrx6q")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_k7al0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

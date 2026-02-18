@@ -1,0 +1,79 @@
+{
+  "time_per_dialogue": 11,
+  "next_scene": "res://Scenes/Credits/credits.tscn",
+  "end_delay": 12,
+  "initial_audio": "res://Sound/Peace2.mp3",
+  "images": [
+    "01_Final_Parte1.png",
+    "02_Collins_Parents.png",
+    "03_Collins_Sister.png",
+    "04_Collins_y_Mellinger_Final1.png",
+    "05_Collins_y_Mellinger_Final2.png",
+    "06_Collins_y_Mellinguer_Final3.png",
+    "07_Collins_Y_Mellinguer_Final4.png",
+    "08_Collins_Mellinguer_Chain.png",
+    "09_Collins_Mellinguer_Kiss.png",
+    "10_Collins_Mellinguer_y_Sr_Mellinguer_Final.png"
+  ],
+  "audio_switches": {
+    "3": "res://Sound/Melancolia.mp3",
+    "7": "res://Sound/FinaleCelesta.mp3"
+  },
+  "dialogues": [
+    [
+      "Interior del helicóptero, de noche.",
+      "Julia: Relájate, Geoffrey. Todo ha terminado.",
+      "Walton: Toma, bebe algo caliente. Lo necesitas.",
+      "Collins: Gracias... a los dos. No sé cómo agradecerles."
+    ],
+    [
+      "En el helipuerto, Collins corre hacia sus padres.",
+      "Collins: ¡Mamá! ¡Papá!",
+      "Madre: ¡Mi hijo! ¡Gracias a Dios estás bien!",
+      "Padre: Nunca perdimos la fe en ti, Geoffrey. Nunca."
+    ],
+    [
+      "Videollamada con su hermana.",
+      "Hermana: ¡Geoffrey! ¡No puedo creer que estés libre!",
+      "Collins: Yo tampoco lo puedo creer, hermanita.",
+      "Hermana: Ojalá pudiera estar ahí contigo... pero te veo pronto, ¿sí?",
+      "Collins: Pronto. Te lo prometo."
+    ],
+    [
+      "Nueva Zelanda. Hogar de la familia Collins, junto al mar.",
+      "Julia: ¿Cómo te sientes?",
+      "Collins: Todavía estoy procesando todo... Anabelle, Aluminum Pharma, Sharaka...",
+      "Julia: Date tiempo. Has pasado por mucho."
+    ],
+    [
+      "Collins: Julia... gracias por no rendirte conmigo.",
+      "Julia: Nunca podría rendirme contigo, Geoffrey."
+    ],
+    [
+      "Julia: Tengo que irme por un tiempo. Debo formalizar mi renuncia a INTERPAX.",
+      "Collins: ¿Renuncias?",
+      "Julia: Sí. Quiero empezar una nueva vida... contigo. No te preocupes por tu trabajo perdido.",
+      "Volverá, más fuerte que antes. Lo importante es que saliste vivo de ese infierno."
+    ],
+    [
+      "Collins observa cómo el auto de Julia desaparece en el horizonte.",
+      "Por ahora, es un adiós temporal.",
+      "Pero sabe que volverán a encontrarse."
+    ],
+    [
+      "Semanas después...",
+      "Collins: Te traje algo. Un pequeño regalo.",
+      "Julia: Geoffrey... es hermoso.",
+      "Collins: Para que sepas que siempre estaré contigo."
+    ],
+    [
+      "No hace falta palabras.",
+      "Un nuevo capítulo comienza para ambos."
+    ],
+    [
+      "Sr. Mellinguer: Bienvenido a la familia, Geoffrey.",
+      "Collins: Gracias, señor Mellinguer. Cuidaré de su hija siempre.",
+      "Julia: Juntos haremos la diferencia, como tú siempre quisiste."
+    ]
+  ]
+}

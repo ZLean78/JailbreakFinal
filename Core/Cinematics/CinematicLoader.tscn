@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Core/Cinematics/CinematicLoader.gd" id="1_loader"]
+
+[node name="CinematicLoader" type="Node2D"]
+script = ExtResource("1_loader")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueLabel" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 542.0
+offset_right = 1000.0
+offset_bottom = 620.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

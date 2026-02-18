@@ -1,0 +1,1486 @@
+[gd_scene load_steps=88 format=3 uid="uid://1upejtevgyt8"]
+
+[ext_resource type="Script" uid="uid://cyj5dt8s2c4xa" path="res://Scenes/Scene1/scene_1.gd" id="1_1aeul"]
+[ext_resource type="PackedScene" uid="uid://cipahy5m8x63e" path="res://Scenes/Scene1/map.tscn" id="1_u64jp"]
+[ext_resource type="Script" uid="uid://drgwbk01o7hhg" path="res://Scenes/Scene1/game_manager.gd" id="2_2tcv7"]
+[ext_resource type="PackedScene" uid="uid://iidxj4ckymsn" path="res://Scenes/Player/player.tscn" id="2_nlsms"]
+[ext_resource type="AudioStream" uid="uid://dq6my7boef703" path="res://Resources/Sounds/floorboards.mp3" id="3_4e855"]
+[ext_resource type="PackedScene" uid="uid://clxipxtavqwvr" path="res://Scenes/Pieces/pieces.tscn" id="4_3ie1y"]
+[ext_resource type="Script" uid="uid://b05sfstxbpm3d" path="res://Scenes/Player/Camera2D.gd" id="4_5uf1v"]
+[ext_resource type="PackedScene" uid="uid://b8ss7pitoj2qr" path="res://Scenes/Pit/pit.tscn" id="5_p4t7p"]
+[ext_resource type="PackedScene" uid="uid://bykw20apom7j" path="res://Scenes/GasTube/gas_tube.tscn" id="6_nan7n"]
+[ext_resource type="PackedScene" uid="uid://cu3rduelwl4bu" path="res://Scenes/Guard/guard.tscn" id="7_roodg"]
+[ext_resource type="PackedScene" uid="uid://cis2yxpufucrf" path="res://Scenes/Shower/shower.tscn" id="7_syydv"]
+[ext_resource type="PackedScene" uid="uid://dliy33l2rrfj5" path="res://Scenes/ElectricGrid/electric_grid.tscn" id="9_jrvq4"]
+[ext_resource type="PackedScene" uid="uid://cbcekd2k5t808" path="res://Scenes/BlueDoor/blue_door.tscn" id="11_ju8sw"]
+[ext_resource type="PackedScene" uid="uid://dfvf5xukufqt3" path="res://Scenes/BlueKey/blue_key.tscn" id="12_kpk6e"]
+[ext_resource type="PackedScene" uid="uid://37p6fh6naam3" path="res://Scenes/YellowDoor/yellow_door.tscn" id="12_sicgh"]
+[ext_resource type="PackedScene" uid="uid://bpya1f5lh7c26" path="res://Scenes/conduct_railings/conduct_railings.tscn" id="13_driu3"]
+[ext_resource type="PackedScene" uid="uid://j238ror8bmpc" path="res://Scenes/Door/door.tscn" id="14_ijkmt"]
+[ext_resource type="PackedScene" uid="uid://wlugo21gh6ve" path="res://Scenes/YellowKey/yellow_key.tscn" id="14_tfsr0"]
+[ext_resource type="PackedScene" uid="uid://brb52gjka0tcv" path="res://Scenes/RedDoor/red_door.tscn" id="15_qww2a"]
+[ext_resource type="PackedScene" uid="uid://ds4dae8pprg07" path="res://Scenes/WhiteDoor/white_door.tscn" id="16_l6n6m"]
+[ext_resource type="PackedScene" uid="uid://c2n6lctt3cprc" path="res://Scenes/RedKey/red_key.tscn" id="18_l6n6m"]
+[ext_resource type="PackedScene" uid="uid://c01gqxo8parib" path="res://Scenes/WhiteKey/white_key.tscn" id="19_roodg"]
+[ext_resource type="PackedScene" uid="uid://bmfv1yyc4vlb5" path="res://Scenes/Desk2/desk2.tscn" id="20_hvsgd"]
+[ext_resource type="PackedScene" uid="uid://4t46eml16a8v" path="res://Scenes/Desk/desk.tscn" id="22_driu3"]
+[ext_resource type="PackedScene" uid="uid://iulgnur7j251" path="res://Scenes/Cupboard2/cupboard2.tscn" id="22_eme1f"]
+[ext_resource type="PackedScene" uid="uid://cuunguiakxpvs" path="res://Scenes/Sink/sink.tscn" id="22_knvie"]
+[ext_resource type="PackedScene" uid="uid://ta20eyd2ang0" path="res://Scenes/Bed/bed.tscn" id="23_o6neu"]
+[ext_resource type="PackedScene" uid="uid://chljq2las1hvx" path="res://Scenes/Wax/wax.tscn" id="23_obbqk"]
+[ext_resource type="PackedScene" uid="uid://c1psmemc3q5v5" path="res://Scenes/Toilet/toilet.tscn" id="23_rsck6"]
+[ext_resource type="PackedScene" uid="uid://m862by0xtq66" path="res://Scenes/Cupboard/cupboard.tscn" id="24_jc06i"]
+[ext_resource type="PackedScene" uid="uid://k6xr82abtk8e" path="res://Scenes/Bottle/bottle.tscn" id="24_lctei"]
+[ext_resource type="PackedScene" uid="uid://cnwh3fv2ldyom" path="res://Scenes/Suit/suit.tscn" id="25_xwt48"]
+[ext_resource type="PackedScene" uid="uid://7exhvh1y7dxf" path="res://Scenes/WaterDrain/water_drain.tscn" id="26_5ojl6"]
+[ext_resource type="Script" uid="uid://bmynsni83rcd3" path="res://Scenes/UI/UI.gd" id="28_v1c0y"]
+[ext_resource type="Texture2D" uid="uid://ctke56gqsvpij" path="res://Scenes/UI/emptycell.png" id="29_knvie"]
+[ext_resource type="PackedScene" uid="uid://bbg4tnbkyuopb" path="res://Scenes/MyBed/my_bed.tscn" id="31_jc06i"]
+[ext_resource type="PackedScene" uid="uid://by6t7snrcmhqb" path="res://Scenes/FirstAid/first_aid.tscn" id="35_rq7jo"]
+[ext_resource type="PackedScene" uid="uid://d11776lhh85wf" path="res://Scenes/Mask/mask.tscn" id="36_kv8y5"]
+[ext_resource type="Script" uid="uid://cdreifc7v1gm5" path="res://Scenes/Scene1/to_theme_2.gd" id="38_e1vog"]
+[ext_resource type="PackedScene" uid="uid://dk1u6brcdh6vg" path="res://Scenes/Acid/acid.tscn" id="39_71cg0"]
+[ext_resource type="Script" uid="uid://c3cibx4msdxlq" path="res://Scenes/Scene1/to_theme_3.gd" id="39_74r1c"]
+[ext_resource type="Script" uid="uid://boya7gutg666c" path="res://Item_Container.gd" id="40_e1vog"]
+[ext_resource type="Script" uid="uid://cqmx883ys0mne" path="res://Scenes/Scene1/la_donna.gd" id="40_l7n3w"]
+[ext_resource type="Script" uid="uid://cqanps3ok3koo" path="res://Scenes/Scene1/bt_theme_3.gd" id="41_7jvar"]
+[ext_resource type="Script" uid="uid://vqosmb6fup4m" path="res://Scenes/File/file.gd" id="41_kv8y5"]
+[ext_resource type="Script" uid="uid://bq4gsfum7kfhl" path="res://Scenes/Scene1/goal_sound.gd" id="42_1xmth"]
+[ext_resource type="Texture2D" uid="uid://ukwmg6pm1ff1" path="res://Scenes/File/map.png" id="42_e1vog"]
+[ext_resource type="AudioStream" uid="uid://difn005p0w3q" path="res://Sound/intro0.mp3" id="44_3dahi"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1xmth"]
+vertices = PackedVector2Array(657.789, 421.039, 190, 419.039, 190, 373.211, 655.633, 383.211, 738.93, 419.133, 1026.94, 706, 1026.06, 845.844, 666.789, 840.148, 741.07, 706, 740.813, 379, 1217.18, 379, 1217.81, 413.117, 663.633, 164.188, 744.813, 165.797)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(8, 7, 0, 4), PackedInt32Array(9, 10, 11, 4, 3), PackedInt32Array(12, 13, 9, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(180, 363, 646, 373, 654, 154, 755, 156, 751, 369, 1227, 369, 1228, 423, 749, 429, 751, 696, 1037, 696, 1036, 856, 657, 850, 648, 431, 180, 429)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pl8w"]
+size = Vector2(187, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tcv7"]
+size = Vector2(151.5, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e855"]
+size = Vector2(127, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nan7n"]
+size = Vector2(91, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwqql"]
+size = Vector2(58, 88)
+
+[sub_resource type="Curve2D" id="Curve2D_ijkmt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 29, 68, 0, 0, 0, 0, 27, 583, 0, 0, 0, 0, 87, 578, 0, 0, 0, 0, 84, 62, 0, 0, 0, 0, 29, 64)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_roodg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 221, 374, 0, 0, 0, 0, 596, 372, 0, 0, 0, 0, 597, 418, 0, 0, 0, 0, 218, 427)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_o6neu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1230, 372, 0, 0, 0, 0, 786, 365, 0, 0, 0, 0, 782, 429, 0, 0, 0, 0, 1227, 429, 0, 0, 0, 0, 1230, 372)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_lctei"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 674, 373, 0, 0, 0, 0, 665, 174, 0, 0, 0, 0, 748, 174, 0, 0, 0, 0, 737, 439, 0, 0, 0, 0, 192, 419, 0, 0, 0, 0, 192, 368, 0, 0, 0, 0, 719, 370, 0, 0, 0, 0, 714, 836, 0, 0, 0, 0, 680, 836, 0, 0, 0, 0, 671, 402)
+}
+point_count = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roodg"]
+size = Vector2(20, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvsgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lctei"]
+size = Vector2(160, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ojl6"]
+size = Vector2(192, 158.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syydv"]
+size = Vector2(221, 156.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou1un"]
+size = Vector2(191, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dahi"]
+size = Vector2(29, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74r1c"]
+size = Vector2(24, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jvar"]
+size = Vector2(21, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xmth"]
+size = Vector2(20, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4wxs"]
+size = Vector2(24, 94)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1xmth"]
+load_path = "res://.godot/imported/LightRange2.png-33009ee3f834bc0c5b553d12ec658c95.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m4wxs"]
+load_path = "res://.godot/imported/LightRange2.png-33009ee3f834bc0c5b553d12ec658c95.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8bbap"]
+load_path = "res://.godot/imported/LightRange2.png-33009ee3f834bc0c5b553d12ec658c95.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_d4sgr"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_hof60"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_2imn0"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ise11"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_irres"]
+font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cvjs"]
+bg_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsck6"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_r5ifs"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_1a70r"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_26dyf"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_htsos"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ine4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bbap"]
+size = Vector2(160, 223)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lww44"]
+size = Vector2(247, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqkdx"]
+size = Vector2(159, 154)
+
+[node name="Scene1" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_1aeul")
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("label", "help_sprite", "audio")]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("2_2tcv7")
+label = NodePath("../CanvasLayer/UI/MainLabel")
+help_sprite = NodePath("../CanvasLayer/UI/HelpSprite")
+audio = NodePath("../Audio")
+
+[node name="Map" parent="." instance=ExtResource("1_u64jp")]
+process_mode = 3
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="Pieces1" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(460, 734)
+rotation = -1.5708
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings2")
+
+[node name="Pieces2" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(171, 768)
+rotation = -1.5708
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings3")
+
+[node name="Pieces3" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(255, 687)
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings10")
+
+[node name="Pieces7" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(403, 491)
+scale = Vector2(0.444739, 1.34503)
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings4")
+
+[node name="Pieces4" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(458, 579)
+rotation = -1.5708
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings5")
+
+[node name="Pieces5" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(348, 173)
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings6")
+
+[node name="Pieces6" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(862, 174)
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings7")
+
+[node name="Pieces8" parent="Pieces" node_paths=PackedStringArray("conduct_railing") instance=ExtResource("4_3ie1y")]
+position = Vector2(872, 180)
+rotation = 3.14159
+conduct_railing = NodePath("../../Pausable/ConductExits/ConductRailings11")
+
+[node name="Toilets" type="Node2D" parent="."]
+
+[node name="Toilet2" parent="Toilets" node_paths=PackedStringArray("player") instance=ExtResource("23_rsck6")]
+y_sort_enabled = true
+position = Vector2(474, 740)
+rotation = 1.5708
+player = NodePath("../../Pausable/Player")
+
+[node name="Toilet3" parent="Toilets" node_paths=PackedStringArray("player") instance=ExtResource("23_rsck6")]
+y_sort_enabled = true
+position = Vector2(264, 610)
+player = NodePath("../../Pausable/Player")
+
+[node name="Toilet4" parent="Toilets" node_paths=PackedStringArray("player") instance=ExtResource("23_rsck6")]
+y_sort_enabled = true
+position = Vector2(289, 255)
+rotation = 3.14159
+player = NodePath("../../Pausable/Player")
+
+[node name="Toilet5" parent="Toilets" node_paths=PackedStringArray("player") instance=ExtResource("23_rsck6")]
+y_sort_enabled = true
+position = Vector2(862, 249)
+rotation = 3.14159
+player = NodePath("../../Pausable/Player")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1xmth")
+
+[node name="Pausable" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="Grids" type="Node2D" parent="Pausable"]
+
+[node name="ElectricGrid" parent="Pausable/Grids" instance=ExtResource("9_jrvq4")]
+position = Vector2(240, 48)
+time = 3.0
+
+[node name="ElectricGrid2" parent="Pausable/Grids" instance=ExtResource("9_jrvq4")]
+position = Vector2(272, 80)
+time = 2.5
+
+[node name="ElectricGrid3" parent="Pausable/Grids" instance=ExtResource("9_jrvq4")]
+position = Vector2(336, 48)
+time = 2.0
+
+[node name="ElectricGrid4" parent="Pausable/Grids" instance=ExtResource("9_jrvq4")]
+position = Vector2(560, 48)
+time = 2.5
+
+[node name="ElectricGrid5" parent="Pausable/Grids" instance=ExtResource("9_jrvq4")]
+position = Vector2(624, 80)
+time = 1.5
+
+[node name="Pits" type="Node2D" parent="Pausable"]
+
+[node name="Pit6" parent="Pausable/Pits" instance=ExtResource("5_p4t7p")]
+position = Vector2(496, 104)
+scale = Vector2(1.5, 1.5)
+time = 3.0
+
+[node name="Pit" parent="Pausable/Pits" instance=ExtResource("5_p4t7p")]
+position = Vector2(496, 56)
+scale = Vector2(1.5, 1.5)
+time = 3.0
+
+[node name="Pit2" parent="Pausable/Pits" instance=ExtResource("5_p4t7p")]
+position = Vector2(848, 80)
+rotation = 1.5708
+scale = Vector2(1.5, 1.7)
+time = 6.0
+
+[node name="Pit3" parent="Pausable/Pits" instance=ExtResource("5_p4t7p")]
+position = Vector2(904, 80)
+rotation = 1.5708
+scale = Vector2(1.5, 1.7)
+time = 4.0
+
+[node name="Pit4" parent="Pausable/Pits" instance=ExtResource("5_p4t7p")]
+position = Vector2(960, 80)
+rotation = 1.5708
+scale = Vector2(1.5, 1.7)
+time = 2.0
+
+[node name="Pit5" parent="Pausable/Pits" instance=ExtResource("5_p4t7p")]
+position = Vector2(1160, 80)
+rotation = 1.5708
+scale = Vector2(1.5, 1.7)
+time = 2.0
+
+[node name="Bottles" type="Node2D" parent="Pausable"]
+position = Vector2(296, 565)
+
+[node name="Bottle" parent="Pausable/Bottles" node_paths=PackedStringArray("player") instance=ExtResource("24_lctei")]
+player = NodePath("../../Player")
+
+[node name="Bottle2" parent="Pausable/Bottles" node_paths=PackedStringArray("player") instance=ExtResource("24_lctei")]
+position = Vector2(39, -41)
+player = NodePath("../../Player")
+
+[node name="Bottle3" parent="Pausable/Bottles" node_paths=PackedStringArray("player") instance=ExtResource("24_lctei")]
+position = Vector2(-1, -293)
+player = NodePath("../../Player")
+
+[node name="Bottle4" parent="Pausable/Bottles" node_paths=PackedStringArray("player") instance=ExtResource("24_lctei")]
+position = Vector2(609, -323)
+player = NodePath("../../Player")
+
+[node name="Shower" parent="Pausable" node_paths=PackedStringArray("player") instance=ExtResource("7_syydv")]
+position = Vector2(1166, 707)
+player = NodePath("../Player")
+
+[node name="WaterDrain" parent="Pausable" node_paths=PackedStringArray("player") instance=ExtResource("26_5ojl6")]
+position = Vector2(1171, 797)
+player = NodePath("../Player")
+
+[node name="Player" parent="Pausable" instance=ExtResource("2_nlsms")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(531, 845)
+max_health = 100
+health = 100
+
+[node name="Guards" type="Node2D" parent="Pausable"]
+
+[node name="Guard" parent="Pausable/Guards" node_paths=PackedStringArray("remote_transform", "start_mark", "objective", "pathfollow", "player", "path") groups=["guards"] instance=ExtResource("7_roodg")]
+position = Vector2(692, 190)
+rotation = 3.13392
+remote_transform = NodePath("../../Paths/Path2D/PathFollow2D/RemoteTransform2D")
+start_mark = NodePath("../../../Marks/Mark3")
+objective = NodePath("../../Player")
+pathfollow = NodePath("../../Paths/Path2D/PathFollow2D")
+type = 1
+player = NodePath("../../Player")
+path = NodePath("../../Paths/Path2D")
+
+[node name="Guard2" parent="Pausable/Guards" node_paths=PackedStringArray("remote_transform", "start_mark", "objective", "pathfollow", "player", "path") groups=["guards"] instance=ExtResource("7_roodg")]
+position = Vector2(194, 386)
+remote_transform = NodePath("../../Paths/Path2D2/PathFollow2D/RemoteTransform2D")
+start_mark = NodePath("../../../Marks/Mark1")
+objective = NodePath("../../Player")
+pathfollow = NodePath("../../Paths/Path2D2/PathFollow2D")
+type = 2
+player = NodePath("../../Player")
+path = NodePath("../../Paths/Path2D2")
+
+[node name="Guard3" parent="Pausable/Guards" node_paths=PackedStringArray("remote_transform", "start_mark", "objective", "pathfollow", "player", "path") groups=["guards"] instance=ExtResource("7_roodg")]
+position = Vector2(1179, 371)
+rotation = -1.55734
+remote_transform = NodePath("../../Paths/Path2D3/PathFollow2D/RemoteTransform2D")
+start_mark = NodePath("../../../Marks/Mark5")
+objective = NodePath("../../Player")
+pathfollow = NodePath("../../Paths/Path2D3/PathFollow2D")
+type = 3
+player = NodePath("../../Player")
+path = NodePath("../../Paths/Path2D3")
+
+[node name="FloorbardAreas" type="Node2D" parent="Pausable"]
+
+[node name="FloorboardsArea1" type="Node2D" parent="Pausable/FloorbardAreas" groups=["Floorboards"]]
+position = Vector2(511, 561)
+
+[node name="FBArea" type="Area2D" parent="Pausable/FloorbardAreas/FloorboardsArea1"]
+position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/FloorbardAreas/FloorboardsArea1/FBArea"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_5pl8w")
+
+[node name="FloorboardsArea2" type="Node2D" parent="Pausable/FloorbardAreas" groups=["Floorboards"]]
+position = Vector2(877, 589)
+
+[node name="FBArea" type="Area2D" parent="Pausable/FloorbardAreas/FloorboardsArea2"]
+position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/FloorbardAreas/FloorboardsArea2/FBArea"]
+position = Vector2(-1.75, 6)
+shape = SubResource("RectangleShape2D_2tcv7")
+
+[node name="FloorboardsArea3" type="Node2D" parent="Pausable/FloorbardAreas" groups=["Floorboards"]]
+position = Vector2(864, 498)
+
+[node name="FBArea" type="Area2D" parent="Pausable/FloorbardAreas/FloorboardsArea3"]
+position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/FloorbardAreas/FloorboardsArea3/FBArea"]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_4e855")
+
+[node name="FloorboardsArea4" type="Node2D" parent="Pausable/FloorbardAreas" groups=["Floorboards"]]
+position = Vector2(1009, 495)
+
+[node name="FBArea" type="Area2D" parent="Pausable/FloorbardAreas/FloorboardsArea4"]
+position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/FloorbardAreas/FloorboardsArea4/FBArea"]
+position = Vector2(2.5, -3)
+shape = SubResource("RectangleShape2D_nan7n")
+
+[node name="FloorboardsArea5" type="Node2D" parent="Pausable/FloorbardAreas" groups=["Floorboards"]]
+position = Vector2(1028, 590)
+
+[node name="FBArea" type="Area2D" parent="Pausable/FloorbardAreas/FloorboardsArea5"]
+position = Vector2(1, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/FloorbardAreas/FloorboardsArea5/FBArea"]
+position = Vector2(1, 6)
+shape = SubResource("RectangleShape2D_qwqql")
+
+[node name="GasTubes" type="Node2D" parent="Pausable"]
+
+[node name="GasTube" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(94, 709)
+time = 3.0
+
+[node name="GasTube2" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(65, 604)
+rotation = -3.13514
+time = 2.0
+
+[node name="GasTube3" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(65, 391)
+rotation = -3.13996
+time = 3.0
+
+[node name="GasTube4" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(64, 214)
+rotation = -3.13996
+time = 1.5
+
+[node name="GasTube5" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(96, 483)
+time = 2.5
+
+[node name="GasTube6" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(96, 316)
+time = 1.5
+
+[node name="GasTube7" parent="Pausable/GasTubes" instance=ExtResource("6_nan7n")]
+position = Vector2(94, 844)
+time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pausable"]
+unique_name_in_owner = true
+stream = ExtResource("3_4e855")
+volume_db = -12.0
+
+[node name="ConductExits" type="Node2D" parent="Pausable"]
+
+[node name="ConductRailings2" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(431, 735)
+rotation = -1.5708
+scale = Vector2(0.249297, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings3" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(144, 767)
+rotation = -1.5708
+scale = Vector2(0.259998, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings4" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(255, 657)
+scale = Vector2(0.26, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings10" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(400, 464)
+scale = Vector2(0.139999, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings8" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(224, 719)
+scale = Vector2(0.26, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings5" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(431, 576)
+rotation = -1.5708
+scale = Vector2(0.3, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings6" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(349, 145)
+scale = Vector2(0.3, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings9" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(291, 207)
+scale = Vector2(0.3, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings7" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(861, 145)
+scale = Vector2(0.3, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="ConductRailings11" parent="Pausable/ConductExits" node_paths=PackedStringArray("help_sprite", "main_label") instance=ExtResource("13_driu3")]
+position = Vector2(870, 207)
+scale = Vector2(0.3, 0.25)
+help_sprite = NodePath("../../../CanvasLayer/UI/HelpSprite")
+main_label = NodePath("../../../CanvasLayer/UI/MainLabel")
+
+[node name="Doors" type="Node2D" parent="Pausable"]
+
+[node name="Door" parent="Pausable/Doors" instance=ExtResource("14_ijkmt")]
+position = Vector2(215, 912)
+scale = Vector2(1.28, 1)
+
+[node name="BlueDoor" parent="Pausable/Doors" instance=ExtResource("11_ju8sw")]
+position = Vector2(399, 30)
+rotation = 1.5708
+scale = Vector2(1.16, 1)
+
+[node name="BlueDoor2" parent="Pausable/Doors" instance=ExtResource("11_ju8sw")]
+position = Vector2(783, 31)
+rotation = 1.57123
+
+[node name="YellowDoor" parent="Pausable/Doors" instance=ExtResource("12_sicgh")]
+position = Vector2(663, 110)
+scale = Vector2(1.28, 1)
+
+[node name="YellowDoor2" parent="Pausable/Doors" instance=ExtResource("12_sicgh")]
+position = Vector2(1071, 758)
+rotation = 1.57176
+scale = Vector2(1.27984, 1)
+
+[node name="RedDoor" parent="Pausable/Doors" instance=ExtResource("15_qww2a")]
+position = Vector2(927, 655)
+
+[node name="RedDoor2" parent="Pausable/Doors" instance=ExtResource("15_qww2a")]
+position = Vector2(1071, 501)
+rotation = 1.5708
+scale = Vector2(1.3, 1)
+
+[node name="WhiteDoor" parent="Pausable/Doors" instance=ExtResource("16_l6n6m")]
+position = Vector2(895, 464)
+
+[node name="WhiteDoor2" parent="Pausable/Doors" instance=ExtResource("16_l6n6m")]
+position = Vector2(481, 464)
+
+[node name="WhiteDoor3" parent="Pausable/Doors" instance=ExtResource("16_l6n6m")]
+position = Vector2(1263, 342)
+rotation = 1.5708
+scale = Vector2(1.65, 1)
+
+[node name="Desks" type="Node2D" parent="Pausable"]
+
+[node name="Desk" parent="Pausable/Desks" instance=ExtResource("22_driu3")]
+position = Vector2(510, 591)
+
+[node name="Desk2" parent="Pausable/Desks" instance=ExtResource("20_hvsgd")]
+position = Vector2(878, 580)
+
+[node name="Desk3" parent="Pausable/Desks" instance=ExtResource("22_driu3")]
+position = Vector2(502, 198)
+rotation = 1.5708
+
+[node name="Cupboard2" parent="Pausable/Desks" instance=ExtResource("22_eme1f")]
+position = Vector2(1174, 621)
+
+[node name="Cupboard3" parent="Pausable/Desks" instance=ExtResource("22_eme1f")]
+position = Vector2(1232, 79)
+rotation = -1.5708
+scale = Vector2(0.92, 0.680005)
+
+[node name="Wax" parent="Pausable/Desks" instance=ExtResource("23_obbqk")]
+position = Vector2(1142, 613)
+
+[node name="Acid" parent="Pausable" node_paths=PackedStringArray("player") instance=ExtResource("39_71cg0")]
+position = Vector2(484, 571)
+player = NodePath("../Player")
+
+[node name="Mask" parent="Pausable" node_paths=PackedStringArray("player") instance=ExtResource("36_kv8y5")]
+position = Vector2(185, 612)
+player = NodePath("../Player")
+
+[node name="ToiletItems" type="Node2D" parent="Pausable"]
+
+[node name="Sink" parent="Pausable/ToiletItems" instance=ExtResource("22_knvie")]
+position = Vector2(1170, 872)
+
+[node name="Toilet" parent="Pausable/ToiletItems" node_paths=PackedStringArray("player") instance=ExtResource("23_rsck6")]
+position = Vector2(1124, 867)
+player = NodePath("../../Player")
+
+[node name="Cupboard" parent="Pausable/ToiletItems" instance=ExtResource("24_jc06i")]
+position = Vector2(1225, 880)
+
+[node name="Suit" parent="Pausable/ToiletItems" instance=ExtResource("25_xwt48")]
+position = Vector2(1224, 864)
+
+[node name="Keys" type="Node2D" parent="Pausable"]
+
+[node name="BlueKey" parent="Pausable/Keys" instance=ExtResource("12_kpk6e")]
+position = Vector2(293, 55)
+
+[node name="YellowKey" parent="Pausable/Keys" instance=ExtResource("14_tfsr0")]
+position = Vector2(1210, 69)
+
+[node name="YellowKey2" parent="Pausable/Keys" instance=ExtResource("14_tfsr0")]
+position = Vector2(521, 187)
+
+[node name="RedKey" parent="Pausable/Keys" instance=ExtResource("18_l6n6m")]
+position = Vector2(1180, 844)
+
+[node name="WhiteKey" parent="Pausable/Keys" instance=ExtResource("19_roodg")]
+position = Vector2(860, 551)
+rotation = 1.57022
+
+[node name="Beds" type="Node2D" parent="Pausable"]
+
+[node name="Bed" parent="Pausable/Beds" node_paths=PackedStringArray("cell_mark", "player") instance=ExtResource("23_o6neu")]
+position = Vector2(207, 559)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+cell = 2
+cell_mark = NodePath("../../../Marks/Mark1")
+player = NodePath("../../Player")
+
+[node name="Bed2" parent="Pausable/Beds" node_paths=PackedStringArray("cell_mark", "player") instance=ExtResource("23_o6neu")]
+position = Vector2(205, 269)
+rotation = -1.5708
+scale = Vector2(1.4, 1.4)
+cell = 3
+cell_mark = NodePath("../../../Marks/Mark1")
+player = NodePath("../../Player")
+
+[node name="Bed3" parent="Pausable/Beds" node_paths=PackedStringArray("cell_mark", "player") instance=ExtResource("23_o6neu")]
+position = Vector2(949, 293)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+cell = 4
+cell_mark = NodePath("../../../Marks/Mark3")
+player = NodePath("../../Player")
+
+[node name="MyBed" parent="Pausable/Beds" instance=ExtResource("31_jc06i")]
+position = Vector2(531, 845)
+rotation = 3.14159
+
+[node name="FirstAids" type="Node2D" parent="Pausable"]
+
+[node name="FirstAid" parent="Pausable/FirstAids" node_paths=PackedStringArray("player") instance=ExtResource("35_rq7jo")]
+position = Vector2(189, 505)
+player = NodePath("../../Player")
+
+[node name="FirstAid2" parent="Pausable/FirstAids" node_paths=PackedStringArray("player") instance=ExtResource("35_rq7jo")]
+position = Vector2(815, 531)
+player = NodePath("../../Player")
+
+[node name="FirstAid3" parent="Pausable/FirstAids" node_paths=PackedStringArray("player") instance=ExtResource("35_rq7jo")]
+position = Vector2(263, 303)
+player = NodePath("../../Player")
+
+[node name="FirstAid4" parent="Pausable/FirstAids" node_paths=PackedStringArray("player") instance=ExtResource("35_rq7jo")]
+position = Vector2(878, 304)
+player = NodePath("../../Player")
+
+[node name="Paths" type="Node2D" parent="Pausable"]
+
+[node name="Path2D" type="Path2D" parent="Pausable/Paths"]
+position = Vector2(663, 169)
+curve = SubResource("Curve2D_ijkmt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D"]
+position = Vector2(29, 68)
+rotation = 1.57468
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D/PathFollow2D"]
+position = Vector2(10.0301, 1.84332)
+rotation = 1.56945
+
+[node name="Path2D2" type="Path2D" parent="Pausable/Paths"]
+curve = SubResource("Curve2D_roodg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D2"]
+position = Vector2(221, 374)
+rotation = -0.00533328
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D2/PathFollow2D"]
+rotation = 1.5708
+
+[node name="Path2D3" type="Path2D" parent="Pausable/Paths"]
+curve = SubResource("Curve2D_o6neu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D3"]
+position = Vector2(1230, 372)
+rotation = -3.12583
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D3/PathFollow2D"]
+rotation = 1.5708
+
+[node name="Path2D4" type="Path2D" parent="Pausable/Paths"]
+curve = SubResource("Curve2D_lctei")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D4"]
+position = Vector2(674, 373)
+rotation = -1.61599
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D4/PathFollow2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("4_5uf1v")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Camera2D"]
+color = Color(0.662452, 0.662452, 0.662452, 1)
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(1282, 401)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_roodg")
+
+[node name="Marks" type="Node2D" parent="."]
+
+[node name="Mark1" type="Marker2D" parent="Marks"]
+position = Vector2(191, 383)
+
+[node name="Area1" type="Area2D" parent="Marks/Mark1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/Mark1/Area1"]
+shape = SubResource("RectangleShape2D_hvsgd")
+
+[node name="Mark2" type="Marker2D" parent="Marks"]
+position = Vector2(700, 387)
+
+[node name="Area2" type="Area2D" parent="Marks/Mark2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/Mark2/Area2"]
+shape = SubResource("RectangleShape2D_hvsgd")
+
+[node name="Mark3" type="Marker2D" parent="Marks"]
+position = Vector2(688, 188)
+
+[node name="Area3" type="Area2D" parent="Marks/Mark3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/Mark3/Area3"]
+shape = SubResource("RectangleShape2D_hvsgd")
+
+[node name="Mark4" type="Marker2D" parent="Marks"]
+position = Vector2(700, 831)
+
+[node name="Area4" type="Area2D" parent="Marks/Mark4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/Mark4/Area4"]
+shape = SubResource("RectangleShape2D_hvsgd")
+
+[node name="Mark5" type="Marker2D" parent="Marks"]
+position = Vector2(1185, 371)
+
+[node name="Area5" type="Area2D" parent="Marks/Mark5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marks/Mark5/Area5"]
+shape = SubResource("RectangleShape2D_hvsgd")
+
+[node name="CellAreas" type="Node2D" parent="."]
+
+[node name="Cell1" type="Area2D" parent="CellAreas"]
+position = Vector2(516, 780)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellAreas/Cell1"]
+position = Vector2(12, 3.5)
+shape = SubResource("RectangleShape2D_lctei")
+
+[node name="Cell2" type="Area2D" parent="CellAreas"]
+position = Vector2(282, 561)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellAreas/Cell2"]
+position = Vector2(-24, -2)
+shape = SubResource("RectangleShape2D_5ojl6")
+
+[node name="Cell3" type="Area2D" parent="CellAreas"]
+position = Vector2(276, 232)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellAreas/Cell3"]
+position = Vector2(-4.5, 6.25)
+shape = SubResource("RectangleShape2D_syydv")
+
+[node name="Cell4" type="Area2D" parent="CellAreas"]
+position = Vector2(895, 232)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellAreas/Cell4"]
+position = Vector2(1.5, 10.5)
+shape = SubResource("RectangleShape2D_ou1un")
+
+[node name="MusicSwitches" type="Node2D" parent="."]
+
+[node name="ToTheme2" type="Area2D" parent="MusicSwitches" node_paths=PackedStringArray("Audio")]
+position = Vector2(142, 766)
+collision_mask = 2
+script = ExtResource("38_e1vog")
+Audio = NodePath("../../Audio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitches/ToTheme2"]
+position = Vector2(-2.5, 5)
+shape = SubResource("RectangleShape2D_3dahi")
+
+[node name="ToTheme3" type="Area2D" parent="MusicSwitches" node_paths=PackedStringArray("Audio")]
+position = Vector2(140, 82)
+collision_mask = 2
+script = ExtResource("39_74r1c")
+Audio = NodePath("../../Audio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitches/ToTheme3"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_74r1c")
+
+[node name="LaDonna" type="Area2D" parent="MusicSwitches" node_paths=PackedStringArray("Audio")]
+position = Vector2(1100, 800)
+collision_mask = 2
+script = ExtResource("40_l7n3w")
+Audio = NodePath("../../Audio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitches/LaDonna"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_7jvar")
+
+[node name="BTTheme3" type="Area2D" parent="MusicSwitches" node_paths=PackedStringArray("Audio")]
+position = Vector2(1037, 797)
+collision_mask = 2
+script = ExtResource("41_7jvar")
+Audio = NodePath("../../Audio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitches/BTTheme3"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_1xmth")
+
+[node name="GoalSound" type="Area2D" parent="MusicSwitches" node_paths=PackedStringArray("Audio")]
+position = Vector2(1281, 402)
+script = ExtResource("42_1xmth")
+Audio = NodePath("../../Audio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitches/GoalSound"]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_m4wxs")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Light1" type="PointLight2D" parent="Lights"]
+position = Vector2(525.5, 562.5)
+scale = Vector2(1.22656, 1.19531)
+color = Color(0.518051, 0.507953, 0.494174, 1)
+texture = SubResource("CompressedTexture2D_1xmth")
+
+[node name="Light2" type="PointLight2D" parent="Lights"]
+position = Vector2(927.5, 559)
+scale = Vector2(1.97656, 1.20313)
+color = Color(0.678944, 0.678944, 0.678944, 1)
+texture = SubResource("CompressedTexture2D_m4wxs")
+
+[node name="Light3" type="PointLight2D" parent="Lights"]
+position = Vector2(1167.5, 783.5)
+scale = Vector2(1.27344, 1.75781)
+color = Color(0.299548, 0.299547, 0.299547, 1)
+texture = SubResource("CompressedTexture2D_8bbap")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="UI" type="Control" parent="CanvasLayer" groups=["ui"]]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("28_v1c0y")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 486.0
+offset_right = 1148.0
+offset_bottom = 644.0
+size_flags_vertical = 8
+color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 2.0
+offset_top = 494.0
+offset_right = 1150.0
+offset_bottom = 642.0
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="BoxContainer" parent="CanvasLayer/UI/BoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="ExamineContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExamineLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/ExamineContainer"]
+layout_mode = 2
+text = "EXAMINAR"
+label_settings = SubResource("LabelSettings_d4sgr")
+
+[node name="UseContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UseLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/UseContainer"]
+layout_mode = 2
+text = "USAR"
+label_settings = SubResource("LabelSettings_hof60")
+
+[node name="EquipContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EquipLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/EquipContainer"]
+layout_mode = 2
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_2imn0")
+
+[node name="ArchiveContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ArchiveLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/ArchiveContainer"]
+layout_mode = 2
+text = "ARCHIVO"
+label_settings = SubResource("LabelSettings_ise11")
+
+[node name="ItemsFlowContainer" type="FlowContainer" parent="CanvasLayer/UI/BoxContainer"]
+custom_minimum_size = Vector2(432, 128)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Item1Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("40_e1vog")
+
+[node name="Item1" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item1Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber1" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item1Container/Item1"]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item2Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item2" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item2Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber2" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item2Container/Item2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item3Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item3" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item3Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber3" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item3Container/Item3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item4Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item4" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item4Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber4" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item4Container/Item4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item5Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item5" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item5Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber5" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item5Container/Item5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 37.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item6Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item6" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item6Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber6" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item6Container/Item6"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item7Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item7" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item7Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber7" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item7Container/Item7"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item8Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item8" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item8Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber8" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item8Container/Item8"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 42.0
+offset_right = 62.0
+offset_bottom = 66.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item9Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item9" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item9Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber9" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item9Container/Item9"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 44.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item10Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item10" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item10Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber10" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item10Container/Item10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item11Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item11" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item11Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber11" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item11Container/Item11"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item12Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+script = ExtResource("40_e1vog")
+
+[node name="Item12" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item12Container"]
+layout_mode = 2
+texture = ExtResource("29_knvie")
+
+[node name="ItemNumber12" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item12Container/Item12"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextAreaContainer" type="BoxContainer" parent="CanvasLayer/UI/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical = true
+
+[node name="TextArea" type="Label" parent="CanvasLayer/UI/BoxContainer/TextAreaContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_irres")
+
+[node name="Name" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 124.0
+offset_bottom = 23.0
+text = "COLLINS"
+
+[node name="EnemyName" type="Label" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 0
+offset_left = 934.0
+offset_right = 1025.0
+offset_bottom = 23.0
+text = "COLLINS"
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 221.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_5cvjs")
+value = 100.0
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 930.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_5cvjs")
+value = 100.0
+
+[node name="MainLabel" type="Label" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 584.0
+offset_top = 448.0
+offset_right = 624.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_rsck6")
+horizontal_alignment = 1
+
+[node name="HelpSprite" type="Sprite2D" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+position = Vector2(600, 410)
+
+[node name="File" type="Control" parent="CanvasLayer" groups=["file"]]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("41_kv8y5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/File"]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/File/CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapLabel" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["map"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -265.0
+offset_right = 130.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mapa del piso 2"
+label_settings = SubResource("LabelSettings_r5ifs")
+
+[node name="Letter1Label" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["letter1"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -207.0
+offset_right = 131.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 1"
+label_settings = SubResource("LabelSettings_1a70r")
+
+[node name="Letter2Label" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["letter2"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -153.0
+offset_right = 130.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 2"
+label_settings = SubResource("LabelSettings_26dyf")
+
+[node name="Exit" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["exit"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 468.0
+offset_top = -36.0
+offset_right = 555.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salir"
+label_settings = SubResource("LabelSettings_htsos")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+offset_right = 1025.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapTexture" type="TextureRect" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("42_e1vog")
+
+[node name="Letter1Content" type="Label" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 350.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey, ahora que has llegado hasta aquí, ya estás en condiciones de conocer los pormenores de esta historia. 
+Seguramente habrás oído hablar del conglomerado polifarmacéutico 'Aluminum Pharma'. Pues bien, ellos son quienes están detrás de que un alto funcionario del gobierno de Zunanda te incriminara y te hiciera encarcelar. Ellos tienen un acuerdo con el gobierno por el cual van a estar a cargo de la implementación del plan de salud. Para ellos esto es un negocio, y la gente como tú les molesta. La idea es que a quien no pueda pagar, se le brinde 'opciones', pero de ninguna forma debe esa persona recibir atención médica gratuita. Tú has sido el más reacio de los Médicos sin Territorio a abandonar el país, gracias a que tu primo, abogado, conoce bien la legislación internacional. Es por eso que la mano derecha del Ministro de Salud ha tomado la decisión de matarte. No es por acabar contigo en sí que lo hace, sino porque quiere que tu muerte sirva de escarmiento a los demás miembros de Médicos sin Territorio en el país. Ahora ya sabes la verdad. No dejes que te afecte. Mantén la mente en frío y recuerda que si vemos que tu vida corre peligro, intervendremos. En el pasillo donde tu estás hay unas rejillas que no hacen ruido. Te darás cuenta cuando las veas. Sólo ponte delante de ellas y no las toques si no estás seguro. Te llevarán adonde tienes que llegar.
+¡Sigue adelante, Geoffrey Collins!
+Tu amigo,
+
+T.F.W."
+label_settings = SubResource("LabelSettings_ine4e")
+autowrap_mode = 3
+
+[node name="Letter2Content" type="Label" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 368.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey,
+
+si ya has conocido a Amir, vas por buen camino. Él te dará información sobre algunos ítems que te serán de utilidad. Deberás continuar hasta la lavandería. Ten especial cuidado con el jefe de pabellón, Benjamin Kaluga, boxeador profesional, y con su mano derecha, Mbeki Sharaka, que es mucho peor y tiene un particular odio por la gente com tú. Suerte, Geoffrey Collins. 
+Tu amigo,
+
+T.F.W.\""
+label_settings = SubResource("LabelSettings_ine4e")
+autowrap_mode = 3
+
+[node name="CameraLimitMax" type="Marker2D" parent="."]
+position = Vector2(990, 767)
+
+[node name="CameraLimitMin" type="Marker2D" parent="."]
+position = Vector2(285, 159)
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_3dahi")
+autoplay = true
+parameters/looping = true
+
+[node name="LightAreas" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="LightAreas"]
+position = Vector2(1171, 797)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightAreas/Area2D"]
+position = Vector2(-5, -14.5)
+shape = SubResource("RectangleShape2D_8bbap")
+
+[node name="Area2D2" type="Area2D" parent="LightAreas"]
+position = Vector2(932, 575)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightAreas/Area2D2"]
+position = Vector2(-5.5, -16.5)
+shape = SubResource("RectangleShape2D_lww44")
+
+[node name="Area2D3" type="Area2D" parent="LightAreas"]
+position = Vector2(529, 579)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightAreas/Area2D3"]
+position = Vector2(-4.5, -13)
+shape = SubResource("RectangleShape2D_gqkdx")
+
+[connection signal="alert_state" from="GameManager" to="GameManager" method="_on_alert_state"]
+[connection signal="body_entered" from="Pausable/FloorbardAreas/FloorboardsArea1/FBArea" to="GameManager" method="_on_fb_area_body_entered"]
+[connection signal="body_exited" from="Pausable/FloorbardAreas/FloorboardsArea1/FBArea" to="GameManager" method="_on_fb_area_body_exited"]
+[connection signal="body_entered" from="Pausable/FloorbardAreas/FloorboardsArea2/FBArea" to="GameManager" method="_on_fb_area_body_entered"]
+[connection signal="body_exited" from="Pausable/FloorbardAreas/FloorboardsArea2/FBArea" to="GameManager" method="_on_fb_area_body_exited"]
+[connection signal="body_entered" from="Pausable/FloorbardAreas/FloorboardsArea3/FBArea" to="GameManager" method="_on_fb_area_body_entered"]
+[connection signal="body_exited" from="Pausable/FloorbardAreas/FloorboardsArea3/FBArea" to="GameManager" method="_on_fb_area_body_exited"]
+[connection signal="body_entered" from="Pausable/FloorbardAreas/FloorboardsArea4/FBArea" to="GameManager" method="_on_fb_area_body_entered"]
+[connection signal="body_exited" from="Pausable/FloorbardAreas/FloorboardsArea4/FBArea" to="GameManager" method="_on_fb_area_body_exited"]
+[connection signal="body_entered" from="Pausable/FloorbardAreas/FloorboardsArea5/FBArea" to="GameManager" method="_on_fb_area_body_entered"]
+[connection signal="body_exited" from="Pausable/FloorbardAreas/FloorboardsArea5/FBArea" to="GameManager" method="_on_fb_area_body_exited"]
+[connection signal="body_entered" from="Goal" to="GameManager" method="_on_goal_body_entered"]
+[connection signal="body_entered" from="Marks/Mark1/Area1" to="." method="_on_area_1_body_entered"]
+[connection signal="body_entered" from="Marks/Mark2/Area2" to="." method="_on_area_2_body_entered"]
+[connection signal="body_entered" from="Marks/Mark3/Area3" to="." method="_on_area_3_body_entered"]
+[connection signal="body_entered" from="Marks/Mark4/Area4" to="." method="_on_area_4_body_entered"]
+[connection signal="body_entered" from="Marks/Mark5/Area5" to="." method="_on_area_5_body_entered"]
+[connection signal="body_entered" from="CellAreas/Cell1" to="." method="_on_cell_1_body_entered"]
+[connection signal="body_exited" from="CellAreas/Cell1" to="." method="_on_cell_1_body_exited"]
+[connection signal="body_entered" from="CellAreas/Cell2" to="." method="_on_cell_2_body_entered"]
+[connection signal="body_exited" from="CellAreas/Cell2" to="." method="_on_cell_2_body_exited"]
+[connection signal="body_entered" from="CellAreas/Cell3" to="." method="_on_cell_3_body_entered"]
+[connection signal="body_exited" from="CellAreas/Cell3" to="." method="_on_cell_3_body_exited"]
+[connection signal="body_entered" from="CellAreas/Cell4" to="." method="_on_cell_4_body_entered"]
+[connection signal="body_exited" from="CellAreas/Cell4" to="." method="_on_cell_4_body_exited"]
+[connection signal="body_entered" from="MusicSwitches/ToTheme2" to="MusicSwitches/ToTheme2" method="_on_body_entered"]
+[connection signal="body_entered" from="MusicSwitches/ToTheme3" to="MusicSwitches/ToTheme3" method="_on_body_entered"]
+[connection signal="body_entered" from="MusicSwitches/LaDonna" to="MusicSwitches/LaDonna" method="_on_body_entered"]
+[connection signal="body_entered" from="MusicSwitches/BTTheme3" to="MusicSwitches/BTTheme3" method="_on_body_entered"]
+[connection signal="body_entered" from="MusicSwitches/GoalSound" to="MusicSwitches/GoalSound" method="_on_body_entered"]
+[connection signal="body_entered" from="LightAreas/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LightAreas/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="LightAreas/Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LightAreas/Area2D2" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="LightAreas/Area2D3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LightAreas/Area2D3" to="." method="_on_area_2d_body_exited"]

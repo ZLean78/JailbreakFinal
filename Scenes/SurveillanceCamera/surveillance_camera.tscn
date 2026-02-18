@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmimficwcy465"]
+
+[ext_resource type="Texture2D" uid="uid://djj530kbmrva8" path="res://Scenes/SurveillanceCamera/SC_Green.png" id="1_movv8"]
+[ext_resource type="Script" uid="uid://kvk3d17uqfj2" path="res://Scenes/SurveillanceCamera/surveillance_camera.gd" id="1_qcwnh"]
+[ext_resource type="Texture2D" uid="uid://c5txe2cgw7iw0" path="res://Scenes/Guard/ConeCyan.png" id="2_qcwnh"]
+
+[sub_resource type="Animation" id="Animation_mx60l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lvh3y"]
+resource_name = "slow_turn"
+length = 4.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.23, 1.23333, 2.3, 3.3, 3.32, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, -2.83267, -2.0944, -1.5708, -0.785398, -0.305433, -1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_qcwnh"]
+resource_name = "still"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_yvsyb"]
+resource_name = "turn"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.4, 2.16667, 2.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, -2.7105, -1.5708, -0.293215, -1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5j4ug"]
+_data = {
+&"RESET": SubResource("Animation_mx60l"),
+&"slow_turn": SubResource("Animation_lvh3y"),
+&"still": SubResource("Animation_qcwnh"),
+&"turn": SubResource("Animation_yvsyb")
+}
+
+[node name="SurveillanceCamera" type="Node2D"]
+script = ExtResource("1_qcwnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.5, 11.5)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("1_movv8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3, 96.5)
+scale = Vector2(2.128, 4.34375)
+color = Color(0.637843, 0.637843, 0.637843, 1)
+texture = ExtResource("2_qcwnh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5j4ug")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0.259179, 32.999)
+
+[node name="Ray" type="RayCast2D" parent="Node2D"]
+position = Vector2(0.0314156, 3.99988)
+target_position = Vector2(2.00527, 127.988)
+collision_mask = 3
+
+[node name="Ray2" type="RayCast2D" parent="Node2D"]
+position = Vector2(-2.94493, 7.02335)
+target_position = Vector2(-22.1118, 113.177)
+collision_mask = 3
+
+[node name="Ray3" type="RayCast2D" parent="Node2D"]
+position = Vector2(1.03138, 3.99202)
+target_position = Vector2(25.8867, 112.8)
+collision_mask = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

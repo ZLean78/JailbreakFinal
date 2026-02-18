@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://lju8mfsext86"]
+
+[ext_resource type="Texture2D" uid="uid://bucksay5ofb7w" path="res://Resources/Textures/Stairs.png" id="1_fumol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sxdy"]
+size = Vector2(193, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cfyy"]
+size = Vector2(193, 19)
+
+[node name="Stairs" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fumol")
+
+[node name="Collider1" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -44)
+shape = SubResource("RectangleShape2D_0sxdy")
+
+[node name="Collider2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 47.5)
+shape = SubResource("RectangleShape2D_6cfyy")

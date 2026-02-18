@@ -1,0 +1,1025 @@
+[gd_scene load_steps=42 format=3 uid="uid://mehly1ejhirr"]
+
+[ext_resource type="Script" uid="uid://4pp88rsg5ral" path="res://Scenes/Scene2_4/scene_2_4.gd" id="1_dikts"]
+[ext_resource type="Script" uid="uid://ca8xtn4ni3m1o" path="res://Scenes/Scene2_4/game_manager.gd" id="1_e5fb8"]
+[ext_resource type="Texture2D" uid="uid://cc27maibjmkva" path="res://Scenes/Scene1/Sprites/Sheet1.png" id="1_pwv8d"]
+[ext_resource type="PackedScene" uid="uid://iidxj4ckymsn" path="res://Scenes/Player/player.tscn" id="2_yq17n"]
+[ext_resource type="Script" uid="uid://b05sfstxbpm3d" path="res://Scenes/Player/Camera2D.gd" id="3_pyrc7"]
+[ext_resource type="Script" uid="uid://bmynsni83rcd3" path="res://Scenes/UI/UI.gd" id="4_0v3tg"]
+[ext_resource type="Texture2D" uid="uid://ctke56gqsvpij" path="res://Scenes/UI/emptycell.png" id="5_e5fb8"]
+[ext_resource type="Script" uid="uid://vqosmb6fup4m" path="res://Scenes/File/file.gd" id="6_dikts"]
+[ext_resource type="PackedScene" uid="uid://j238ror8bmpc" path="res://Scenes/Door/door.tscn" id="6_ps65k"]
+[ext_resource type="Texture2D" uid="uid://ukwmg6pm1ff1" path="res://Scenes/File/map.png" id="7_fm6p8"]
+[ext_resource type="PackedScene" uid="uid://brb52gjka0tcv" path="res://Scenes/RedDoor/red_door.tscn" id="7_xwq8b"]
+[ext_resource type="Texture2D" uid="uid://jiqii5780od1" path="res://Resources/Textures/guardWalk.png" id="9_hhc30"]
+[ext_resource type="Script" uid="uid://cya0twpmnr0qk" path="res://Scenes/Guard/guard_2.gd" id="9_rmhsp"]
+[ext_resource type="Script" uid="uid://ckbqbkc1tdwlw" path="res://Scenes/Guard/vision_cone.gd" id="10_77wnp"]
+[ext_resource type="Texture2D" uid="uid://baykl8qrnp3wr" path="res://Scenes/Guard/LightRange.png" id="11_hpyv4"]
+[ext_resource type="AudioStream" uid="uid://7ow1astylbdj" path="res://Sound/Stealth2.mp3" id="14_er7oo"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e5fb8"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dikts"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yq17n"]
+texture = ExtResource("1_pwv8d")
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+0:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_e5fb8")
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:8/0 = 0
+2:8/0 = 0
+2:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dikts")
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pyrc7"]
+tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_yq17n")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmhsp"]
+size = Vector2(60.5, 22.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yw2t"]
+size = Vector2(25.0001, 22)
+
+[sub_resource type="Animation" id="Animation_ctrrx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_hhc30")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_vm30s"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_hhc30")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.32, 0.57),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hecb1"]
+_data = {
+&"RESET": SubResource("Animation_ctrrx"),
+&"Walk": SubResource("Animation_vm30s")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t02l"]
+radius = 21.2132
+
+[sub_resource type="Curve2D" id="Curve2D_rmhsp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 172, -213, 0, 0, 0, 0, 216, -214, 0, 0, 0, 0, 207, 121, 0, 0, 0, 0, 166, 121, 0, 0, 0, 0, 171, -212)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_er7oo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 170, 362, 0, 0, 0, 0, 169, 150, 0, 0, 0, 0, 205, 148, 0, 0, 0, 0, 207, 361, 0, 0, 0, 0, 170, 361)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_xwq8b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 164, 734, 0, 0, 0, 0, 167, 411, 0, 0, 0, 0, 215, 408, 0, 0, 0, 0, 215, 734, 0, 0, 0, 0, 164, 734)
+}
+point_count = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ps65k"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwq8b"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmhsp"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_er7oo"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbmvq"]
+font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhc30"]
+bg_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_77wnp"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_hpyv4"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_1m106"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ssvfj"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_apguy"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_hot2n"]
+
+[node name="Scene2_4" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_dikts")
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_e5fb8")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, 61)
+zoom = Vector2(2, 2)
+script = ExtResource("3_pyrc7")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Camera"]
+color = Color(0.662745, 0.662745, 0.662745, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_pyrc7")
+format = 2
+layer_0/tile_data = PackedInt32Array(2621440, 0, 8, 2621441, 0, 8, 2621442, 0, 8, 2621443, 0, 8, 2621444, 0, 8, 2621445, 0, 8, 2621446, 0, 8, 2621447, 0, 8, 2621448, 0, 8, 2555904, 131072, 8, 2490368, 131072, 8, 2424832, 131072, 8, 2359296, 131072, 8, 2162688, 131072, 8, 2097152, 131072, 8, 2031616, 131072, 8, 1966080, 131072, 8, 1900544, 131072, 8, 1835008, 131072, 8, 1769472, 131072, 8, 1703936, 131072, 8, 1638401, 0, 8, 1638408, 0, 8, 1638407, 0, 8, 2621449, 0, 8, 1638400, 131072, 8, 1638409, 131072, 8, 1703945, 131072, 8, 1769481, 131072, 8, 1835017, 131072, 8, 1900553, 131072, 8, 1966089, 131072, 8, 2031625, 131072, 8, 2097161, 131072, 8, 2162697, 131072, 8, 2359305, 131072, 8, 2424841, 131072, 8, 2490377, 131072, 8, 2555913, 131072, 8, 1638402, 0, 8, 1638403, 0, 8, 1638404, 131072, 8, 1572871, 131072, 8, 1507335, 131072, 8, 1441799, 131072, 8, 1376263, 131072, 8, 1310727, 131072, 8, 1245191, 131072, 8, 1245192, 0, 8, 1245193, 131072, 8, 1048583, 0, 8, 1048584, 0, 8, 1048585, 131072, 8, 1179657, 131072, 8, 1114121, 131072, 8, 1245188, 131072, 8, 1179652, 131072, 8, 1310724, 131072, 8, 1376260, 131072, 8, 1441796, 131072, 8, 1507332, 131072, 8, 1572868, 131072, 8, 1114116, 131072, 8, 1048580, 131072, 8, 983044, 131072, 8, 917508, 131072, 8, 851972, 131072, 8, 786436, 131072, 8, 720900, 131072, 8, 655364, 131072, 8, 983047, 131072, 8, 917511, 131072, 8, 851975, 131072, 8, 786439, 131072, 8, 720903, 131072, 8, 655367, 131072, 8, 589831, 131072, 8, 524291, 0, 8, 524290, 131072, 8, 458754, 131072, 8, 393218, 131072, 8, 327682, 131072, 8, 327683, 0, 8, 327684, 131072, 8, 524295, 131072, 8, 458759, 131072, 8, 393223, 131072, 8, 327687, 131072, 8, 262151, 131072, 8, 196615, 131072, 8, 131079, 131072, 8, 65543, 131072, 8, 7, 131072, 8, -65529, 131072, 8, 262148, 131072, 8, 196612, 131072, 8, 131076, 131072, 8, 65540, 131072, 8, 4, 131072, 8, -65532, 131072, 8, -131065, 131072, 8, -131064, 0, 8, -131063, 0, 8, -196599, 131072, 8, -262135, 131072, 8, -327673, 0, 8, -327672, 0, 8, -327671, 131072, 8, -131068, 131072, 8, -196604, 131072, 8, -262140, 131072, 8, -524284, 131072, 8, -589820, 131072, 8, -655356, 131072, 8, -393209, 131072, 8, -458745, 131072, 8, -524281, 131072, 8, -589817, 131072, 8, -655353, 131072, 8, 589828, 131072, 8, 524292, 131072, 8, 393221, 196608, 0, 327685, 196608, 0, 262149, 196608, 0, 196613, 196608, 0, 131077, 196608, 0, 65541, 196608, 0, 5, 196608, 0, -65531, 196608, 0, -131067, 196608, 0, -196603, 196608, 0, -262139, 196608, 0, -327675, 196608, 0, -393211, 196608, 0, -458747, 196608, 0, -524283, 196608, 0, -589819, 196608, 0, -655355, 196608, 0, -655354, 196608, 0, -589818, 196608, 0, -524282, 196608, 0, -458746, 196608, 0, -393210, 196608, 0, -327674, 196608, 0, -262138, 196608, 0, -196602, 196608, 0, -131066, 196608, 0, -65530, 196608, 0, 6, 196608, 0, 65542, 196608, 0, 131078, 196608, 0, 196614, 196608, 0, 262150, 196608, 0, 327686, 196608, 0, 393222, 196608, 0, 458758, 196608, 0, 458757, 196608, 0, 458756, 196608, 0, 393220, 196608, 0, 393219, 196608, 0, 458755, 196608, 0, 524293, 196608, 0, 589829, 196608, 0, 655365, 196608, 0, 720901, 196608, 0, 786437, 196608, 0, 851973, 196608, 0, 917509, 196608, 0, 983045, 196608, 0, 1048581, 196608, 0, 1114117, 196608, 0, 1179653, 196608, 0, 1245189, 196608, 0, 1310725, 196608, 0, 1376261, 196608, 0, 1441797, 196608, 0, 1507333, 196608, 0, 1572869, 196608, 0, 1638405, 196608, 0, 1703941, 196608, 0, 1703940, 196608, 0, 1703939, 196608, 0, 1703938, 196608, 0, 1703937, 196608, 0, 1769473, 196608, 0, 1835009, 196608, 0, 1900545, 196608, 0, 1966081, 196608, 0, 2031617, 196608, 0, 2097153, 196608, 0, 2162689, 196608, 0, 2228225, 196608, 0, 2228224, 196608, 0, 2293760, 196608, 0, 2293761, 196608, 0, 2359297, 196608, 0, 2424833, 196608, 0, 2490369, 196608, 0, 2555905, 196608, 0, 2555906, 196608, 0, 2490370, 196608, 0, 2424834, 196608, 0, 2359298, 196608, 0, 2293762, 196608, 0, 2228226, 196608, 0, 2162690, 196608, 0, 2097154, 196608, 0, 2031618, 196608, 0, 1966082, 196608, 0, 1900546, 196608, 0, 1835010, 196608, 0, 1769474, 196608, 0, 1769475, 196608, 0, 1835011, 196608, 0, 1900547, 196608, 0, 1966083, 196608, 0, 2031619, 196608, 0, 2097155, 196608, 0, 2162691, 196608, 0, 2228227, 196608, 0, 2293763, 196608, 0, 2359299, 196608, 0, 2424835, 196608, 0, 2490371, 196608, 0, 2555907, 196608, 0, 2555908, 196608, 0, 2490372, 196608, 0, 2424836, 196608, 0, 2359300, 196608, 0, 2293764, 196608, 0, 2228228, 196608, 0, 2162692, 196608, 0, 2097156, 196608, 0, 2031620, 196608, 0, 1966084, 196608, 0, 1900548, 196608, 0, 1835012, 196608, 0, 1769476, 196608, 0, 1769477, 196608, 0, 1835013, 196608, 0, 1900549, 196608, 0, 1966085, 196608, 0, 2031621, 196608, 0, 2097157, 196608, 0, 2162693, 196608, 0, 2228229, 196608, 0, 2293765, 196608, 0, 2359301, 196608, 0, 2424837, 196608, 0, 2490373, 196608, 0, 2555909, 196608, 0, 2555910, 196608, 0, 2490374, 196608, 0, 2424838, 196608, 0, 2359302, 196608, 0, 2293766, 196608, 0, 2228230, 196608, 0, 2162694, 196608, 0, 2097158, 196608, 0, 2031622, 196608, 0, 1966086, 196608, 0, 1900550, 196608, 0, 1835014, 196608, 0, 1769478, 196608, 0, 1703942, 196608, 0, 1638406, 196608, 0, 1572870, 196608, 0, 1507334, 196608, 0, 1441798, 196608, 0, 1376262, 196608, 0, 1310726, 196608, 0, 1245190, 196608, 0, 1179654, 196608, 0, 1114118, 196608, 0, 1048582, 196608, 0, 983046, 196608, 0, 917510, 196608, 0, 851974, 196608, 0, 786438, 196608, 0, 720902, 196608, 0, 655366, 196608, 0, 589830, 196608, 0, 524294, 196608, 0, 1114119, 196608, 0, 1179655, 196608, 0, 1179656, 196608, 0, 1114120, 196608, 0, 1703943, 196608, 0, 1769479, 196608, 0, 1835015, 196608, 0, 1900551, 196608, 0, 1966087, 196608, 0, 2031623, 196608, 0, 2097159, 196608, 0, 2162695, 196608, 0, 2228231, 196608, 0, 2293767, 196608, 0, 2359303, 196608, 0, 2424839, 196608, 0, 2490375, 196608, 0, 2555911, 196608, 0, 2555912, 196608, 0, 2490376, 196608, 0, 2424840, 196608, 0, 2359304, 196608, 0, 2293768, 196608, 0, 2228232, 196608, 0, 2162696, 196608, 0, 2097160, 196608, 0, 2031624, 196608, 0, 1966088, 196608, 0, 1900552, 196608, 0, 1835016, 196608, 0, 1769480, 196608, 0, 1703944, 196608, 0, 2228233, 196608, 0, 2293769, 196608, 0, -196601, 196608, 0, -262137, 196608, 0, -262136, 196608, 0, -196600, 196608, 0, -720892, 0, 8, -720891, 0, 8, -720890, 0, 8, -720889, 0, 8, 2293759, 131072, 8, 2359295, 131072, 8, -262141, 0, 8, -262142, 0, 8, -262143, 0, 8, -327679, 131072, 8, -393215, 131072, 8, -458751, 131072, 8, -458750, 0, 8, -458749, 0, 8, -458748, 0, 8, -327678, 131072, 0, -393214, 131072, 0, -393213, 131072, 0, -393212, 131072, 0, -327676, 131072, 0, -327677, 131072, 0)
+
+[node name="Pausable" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="Goal" type="Area2D" parent="Pausable"]
+position = Vector2(191, -306)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Goal"]
+position = Vector2(0, -2.375)
+shape = SubResource("RectangleShape2D_rmhsp")
+
+[node name="Player" parent="Pausable" instance=ExtResource("2_yq17n")]
+unique_name_in_owner = true
+position = Vector2(62, 1122)
+max_health = 100
+health = 100
+
+[node name="Door" parent="Pausable" instance=ExtResource("6_ps65k")]
+position = Vector2(305, 1090)
+rotation = 1.5708
+
+[node name="RedDoor" parent="Pausable" instance=ExtResource("7_xwq8b")]
+position = Vector2(18, 1088)
+rotation = 1.5708
+
+[node name="RedDoor2" parent="Pausable" instance=ExtResource("7_xwq8b")]
+position = Vector2(160, -230)
+
+[node name="Guard" type="CharacterBody2D" parent="Pausable" node_paths=PackedStringArray("player", "path", "pathfollow")]
+position = Vector2(213.675, -127.471)
+rotation = -3.11473
+collision_layer = 8
+script = ExtResource("9_rmhsp")
+type = 1
+player = NodePath("../Player")
+path = NodePath("../Paths/Path2D")
+pathfollow = NodePath("../Paths/Path2D/PathFollow2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Guard"]
+position = Vector2(1, 0)
+scale = Vector2(1, 0.96875)
+texture = ExtResource("9_hhc30")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Guard"]
+position = Vector2(0.500006, -0.999998)
+shape = SubResource("RectangleShape2D_2yw2t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pausable/Guard"]
+libraries = {
+&"": SubResource("AnimationLibrary_hecb1")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="Pausable/Guard"]
+position = Vector2(-3.57628e-06, -1)
+target_position = Vector2(-0.000362043, -100)
+collision_mask = 3
+
+[node name="RayCast2D2" type="RayCast2D" parent="Pausable/Guard"]
+position = Vector2(0.999996, -1)
+target_position = Vector2(-34.0004, -99.9999)
+collision_mask = 3
+
+[node name="RayCast2D3" type="RayCast2D" parent="Pausable/Guard"]
+position = Vector2(-7.21216e-06, -2)
+target_position = Vector2(35.9996, -100)
+collision_mask = 3
+
+[node name="VisionCone" type="Node2D" parent="Pausable/Guard" node_paths=PackedStringArray("enemy_body")]
+script = ExtResource("10_77wnp")
+enemy_body = NodePath("..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Pausable/Guard"]
+
+[node name="ShootTimer" type="Timer" parent="Pausable/Guard"]
+
+[node name="Spawner" type="Marker2D" parent="Pausable/Guard"]
+
+[node name="StepAudioPlayer" type="AudioStreamPlayer2D" parent="Pausable/Guard"]
+
+[node name="NoticeAudioPlayer" type="AudioStreamPlayer2D" parent="Pausable/Guard"]
+
+[node name="DetectionArea" type="Area2D" parent="Pausable/Guard"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Guard/DetectionArea"]
+shape = SubResource("CircleShape2D_2t02l")
+
+[node name="PointLight2D" type="PointLight2D" parent="Pausable/Guard"]
+scale = Vector2(0.624608, 0.569937)
+color = Color(0.729412, 0.729412, 0.729412, 0.988235)
+texture = ExtResource("11_hpyv4")
+
+[node name="Guard2" type="CharacterBody2D" parent="Pausable" node_paths=PackedStringArray("player", "path", "pathfollow")]
+position = Vector2(169.653, 288.478)
+rotation = -0.0047133
+collision_layer = 8
+script = ExtResource("9_rmhsp")
+type = 1
+player = NodePath("../Player")
+path = NodePath("../Paths/Path2D2")
+pathfollow = NodePath("../Paths/Path2D2/PathFollow2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Guard2"]
+position = Vector2(1, 0)
+scale = Vector2(1, 0.96875)
+texture = ExtResource("9_hhc30")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Guard2"]
+position = Vector2(0.500006, -0.999998)
+shape = SubResource("RectangleShape2D_2yw2t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pausable/Guard2"]
+libraries = {
+&"": SubResource("AnimationLibrary_hecb1")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="Pausable/Guard2"]
+position = Vector2(-3.57628e-06, -1)
+target_position = Vector2(-0.000362043, -100)
+collision_mask = 3
+
+[node name="RayCast2D2" type="RayCast2D" parent="Pausable/Guard2"]
+position = Vector2(0.999996, -1)
+target_position = Vector2(-34.0004, -99.9999)
+collision_mask = 3
+
+[node name="RayCast2D3" type="RayCast2D" parent="Pausable/Guard2"]
+position = Vector2(-7.21216e-06, -2)
+target_position = Vector2(35.9996, -100)
+collision_mask = 3
+
+[node name="VisionCone" type="Node2D" parent="Pausable/Guard2" node_paths=PackedStringArray("enemy_body")]
+script = ExtResource("10_77wnp")
+enemy_body = NodePath("..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Pausable/Guard2"]
+
+[node name="ShootTimer" type="Timer" parent="Pausable/Guard2"]
+
+[node name="Spawner" type="Marker2D" parent="Pausable/Guard2"]
+
+[node name="StepAudioPlayer" type="AudioStreamPlayer2D" parent="Pausable/Guard2"]
+
+[node name="NoticeAudioPlayer" type="AudioStreamPlayer2D" parent="Pausable/Guard2"]
+
+[node name="DetectionArea" type="Area2D" parent="Pausable/Guard2"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Guard2/DetectionArea"]
+shape = SubResource("CircleShape2D_2t02l")
+
+[node name="PointLight2D" type="PointLight2D" parent="Pausable/Guard2"]
+scale = Vector2(0.624608, 0.569937)
+color = Color(0.729412, 0.729412, 0.729412, 0.988235)
+texture = ExtResource("11_hpyv4")
+
+[node name="Guard3" type="CharacterBody2D" parent="Pausable" node_paths=PackedStringArray("player", "path", "pathfollow")]
+position = Vector2(179.147, 734)
+rotation = -1.57079
+collision_layer = 8
+script = ExtResource("9_rmhsp")
+type = 1
+player = NodePath("../Player")
+path = NodePath("../Paths/Path2D3")
+pathfollow = NodePath("../Paths/Path2D3/PathFollow2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Guard3"]
+position = Vector2(1, 0)
+scale = Vector2(1, 0.96875)
+texture = ExtResource("9_hhc30")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Guard3"]
+position = Vector2(0.500006, -0.999998)
+shape = SubResource("RectangleShape2D_2yw2t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pausable/Guard3"]
+libraries = {
+&"": SubResource("AnimationLibrary_hecb1")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="Pausable/Guard3"]
+position = Vector2(-3.57628e-06, -1)
+target_position = Vector2(-0.000362043, -100)
+collision_mask = 3
+
+[node name="RayCast2D2" type="RayCast2D" parent="Pausable/Guard3"]
+position = Vector2(0.999996, -1)
+target_position = Vector2(-34.0004, -99.9999)
+collision_mask = 3
+
+[node name="RayCast2D3" type="RayCast2D" parent="Pausable/Guard3"]
+position = Vector2(-7.21216e-06, -2)
+target_position = Vector2(35.9996, -100)
+collision_mask = 3
+
+[node name="VisionCone" type="Node2D" parent="Pausable/Guard3" node_paths=PackedStringArray("enemy_body")]
+script = ExtResource("10_77wnp")
+enemy_body = NodePath("..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Pausable/Guard3"]
+
+[node name="ShootTimer" type="Timer" parent="Pausable/Guard3"]
+
+[node name="Spawner" type="Marker2D" parent="Pausable/Guard3"]
+
+[node name="StepAudioPlayer" type="AudioStreamPlayer2D" parent="Pausable/Guard3"]
+
+[node name="NoticeAudioPlayer" type="AudioStreamPlayer2D" parent="Pausable/Guard3"]
+
+[node name="DetectionArea" type="Area2D" parent="Pausable/Guard3"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Guard3/DetectionArea"]
+shape = SubResource("CircleShape2D_2t02l")
+
+[node name="PointLight2D" type="PointLight2D" parent="Pausable/Guard3"]
+scale = Vector2(0.624608, 0.569937)
+color = Color(0.729412, 0.729412, 0.729412, 0.988235)
+texture = ExtResource("11_hpyv4")
+
+[node name="Paths" type="Node2D" parent="Pausable"]
+
+[node name="Path2D" type="Path2D" parent="Pausable/Paths"]
+physics_interpolation_mode = 1
+curve = SubResource("Curve2D_rmhsp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D"]
+position = Vector2(213.675, -127.471)
+rotation = 1.59766
+progress = 130.577
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D/PathFollow2D"]
+rotation = 1.5708
+remote_path = NodePath("../../../../Guard")
+
+[node name="Path2D2" type="Path2D" parent="Pausable/Paths"]
+curve = SubResource("Curve2D_er7oo")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D2"]
+position = Vector2(169.653, 288.478)
+rotation = -1.57551
+progress = 73.53
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D2/PathFollow2D"]
+rotation = 1.5708
+remote_path = NodePath("../../../../Guard2")
+
+[node name="Path2D3" type="Path2D" parent="Pausable/Paths"]
+curve = SubResource("Curve2D_xwq8b")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Pausable/Paths/Path2D3"]
+position = Vector2(179.147, 734)
+rotation = 3.14159
+progress = 732.932
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Pausable/Paths/Path2D3/PathFollow2D"]
+rotation = 1.5708
+remote_path = NodePath("../../../../Guard3")
+
+[node name="CameraLimitMax" type="Marker2D" parent="."]
+position = Vector2(293, 1155)
+
+[node name="CameraLimitMin" type="Marker2D" parent="."]
+position = Vector2(293, -126)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_0v3tg")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 486.0
+offset_right = 1148.0
+offset_bottom = 644.0
+size_flags_vertical = 8
+color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_left = 2.0
+offset_top = 494.0
+offset_right = 1150.0
+offset_bottom = 642.0
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="BoxContainer" parent="CanvasLayer/UI/BoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="ExamineContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExamineLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/ExamineContainer"]
+layout_mode = 2
+text = "EXAMINAR"
+label_settings = SubResource("LabelSettings_ps65k")
+
+[node name="UseContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UseLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/UseContainer"]
+layout_mode = 2
+text = "USAR"
+label_settings = SubResource("LabelSettings_xwq8b")
+
+[node name="EquipContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EquipLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/EquipContainer"]
+layout_mode = 2
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_rmhsp")
+
+[node name="ArchiveContainer" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ArchiveLabel" type="Label" parent="CanvasLayer/UI/BoxContainer/VBoxContainer/ArchiveContainer"]
+layout_mode = 2
+text = "ARCHIVO"
+label_settings = SubResource("LabelSettings_er7oo")
+
+[node name="ItemsFlowContainer" type="FlowContainer" parent="CanvasLayer/UI/BoxContainer"]
+custom_minimum_size = Vector2(432, 128)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Item1Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Item1" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item1Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber1" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item1Container/Item1"]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item2Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item2" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item2Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber2" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item2Container/Item2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item3Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item3" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item3Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber3" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item3Container/Item3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 33.0
+offset_right = 62.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item4Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item4" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item4Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber4" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item4Container/Item4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 59.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item5Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item5" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item5Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber5" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item5Container/Item5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 37.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item6Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item6" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item6Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber6" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item6Container/Item6"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 60.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item7Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item7" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item7Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber7" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item7Container/Item7"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item8Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item8" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item8Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber8" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item8Container/Item8"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 42.0
+offset_right = 62.0
+offset_bottom = 66.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item9Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item9" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item9Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber9" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item9Container/Item9"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 44.0
+offset_right = 62.0
+offset_bottom = 68.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item10Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item10" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item10Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber10" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item10Container/Item10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item11Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item11" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item11Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber11" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item11Container/Item11"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item12Container" type="CenterContainer" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer"]
+layout_mode = 2
+
+[node name="Item12" type="TextureRect" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item12Container"]
+layout_mode = 2
+texture = ExtResource("5_e5fb8")
+
+[node name="ItemNumber12" type="Label" parent="CanvasLayer/UI/BoxContainer/ItemsFlowContainer/Item12Container/Item12"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 46.0
+offset_right = 62.0
+offset_bottom = 69.0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextAreaContainer" type="BoxContainer" parent="CanvasLayer/UI/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical = true
+
+[node name="TextArea" type="Label" parent="CanvasLayer/UI/BoxContainer/TextAreaContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nbmvq")
+
+[node name="Name" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 124.0
+offset_bottom = 23.0
+text = "COLLINS"
+
+[node name="EnemyName" type="Label" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 0
+offset_left = 934.0
+offset_right = 1025.0
+offset_bottom = 23.0
+text = "COLLINS"
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 221.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_hhc30")
+value = 100.0
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 930.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_hhc30")
+value = 100.0
+
+[node name="MainLabel" type="Label" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 584.0
+offset_top = 448.0
+offset_right = 624.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_77wnp")
+horizontal_alignment = 1
+
+[node name="HelpSprite" type="Sprite2D" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+position = Vector2(600, 410)
+
+[node name="File" type="Control" parent="CanvasLayer" groups=["file"]]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_dikts")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/File"]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/File/CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapLabel" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["map"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -265.0
+offset_right = 130.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mapa del piso 2"
+label_settings = SubResource("LabelSettings_hpyv4")
+
+[node name="Letter1Label" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["letter1"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -207.0
+offset_right = 131.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 1"
+label_settings = SubResource("LabelSettings_1m106")
+
+[node name="Letter2Label" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["letter2"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -153.0
+offset_right = 130.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carta 2"
+label_settings = SubResource("LabelSettings_ssvfj")
+
+[node name="Exit" type="Label" parent="CanvasLayer/File/CanvasLayer/ColorRect" groups=["exit"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 468.0
+offset_top = -36.0
+offset_right = 555.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salir"
+label_settings = SubResource("LabelSettings_apguy")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+offset_right = 1025.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapTexture" type="TextureRect" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fm6p8")
+
+[node name="Letter1Content" type="Label" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 350.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey, ahora que has llegado hasta aquí, ya estás en condiciones de conocer los pormenores de esta historia. 
+Seguramente habrás oído hablar del conglomerado polifarmacéutico 'Aluminum Pharma'. Pues bien, ellos son quienes están detrás de que un alto funcionario del gobierno de Zunanda te incriminara y te hiciera encarcelar. Ellos tienen un acuerdo con el gobierno por el cual van a estar a cargo de la implementación del plan de salud. Para ellos esto es un negocio, y la gente como tú les molesta. La idea es que a quien no pueda pagar, se le brinde 'opciones', pero de ninguna forma debe esa persona recibir atención médica gratuita. Tú has sido el más reacio de los Médicos sin Territorio a abandonar el país, gracias a que tu primo, abogado, conoce bien la legislación internacional. Es por eso que la mano derecha del Ministro de Salud ha tomado la decisión de matarte. No es por acabar contigo en sí que lo hace, sino porque quiere que tu muerte sirva de escarmiento a los demás miembros de Médicos sin Territorio en el país. Ahora ya sabes la verdad. No dejes que te afecte. Mantén la mente en frío y recuerda que si vemos que tu vida corre peligro, intervendremos. En el pasillo donde tu estás hay unas rejillas que no hacen ruido. Te darás cuenta cuando las veas. Sólo ponte delante de ellas y no las toques si no estás seguro. Te llevarán adonde tienes que llegar.
+¡Sigue adelante, Geoffrey Collins!
+Tu amigo,
+
+T.F.W."
+label_settings = SubResource("LabelSettings_hot2n")
+autowrap_mode = 3
+
+[node name="Letter2Content" type="Label" parent="CanvasLayer/File/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -310.0
+offset_right = 368.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Querido Geoffrey,
+
+si ya has conocido a Amir, vas por buen camino. Él te dará información sobre algunos ítems que te serán de utilidad. Deberás continuar hasta la lavandería. Ten especial cuidado con el jefe de pabellón, Benjamin Kaluga, boxeador profesional, y con su mano derecha, Mbeki Sharaka, que es mucho peor y tiene un particular odio por la gente com tú. Suerte, Geoffrey Collins. 
+Tu amigo,
+
+T.F.W.\""
+label_settings = SubResource("LabelSettings_hot2n")
+autowrap_mode = 3
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_er7oo")
+autoplay = true
+parameters/looping = true
+
+[connection signal="body_entered" from="Pausable/Goal" to="GameManager" method="_on_goal_body_entered"]
+[connection signal="body_entered" from="Pausable/Guard/DetectionArea" to="Pausable/Guard" method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="Pausable/Guard2/DetectionArea" to="Pausable/Guard2" method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="Pausable/Guard3/DetectionArea" to="Pausable/Guard3" method="_on_detection_area_body_entered"]

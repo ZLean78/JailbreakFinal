@@ -1,0 +1,68 @@
+{
+  "time_per_dialogue": 10,
+  "next_scene": "res://Scenes/Menu/menu.tscn",
+  "end_delay": 12,
+  "initial_audio": "res://Scenes/Cinematic_Intro/AfricanMorning.mp3",
+  "images": [
+    "01_hospital.png",
+    "02_collins_working.png",
+    "03_mellinguer_watching.png",
+    "04_mellinguer_satisfied.png",
+    "05_collins_inspected.png",
+    "06_diamonds.png",
+    "07_collins_arrested.png",
+    "08_mellinguer_shocked.png",
+    "09_collins_arrested_outside.png",
+    "10_mellinguer_walton.png"
+  ],
+  "audio_switches": {
+    "4": "res://Sound/Shock.mp3",
+    "9": "res://Sound/DecisiveMoment.mp3"
+  },
+  "dialogues": [
+    [
+      "En Zalimbwe, una joven república de África central, Geoffrey Collins, un",
+      "médico sin territorio, se encuentra dando lo mejor de sí para hacer la diferencia."
+    ],
+    [
+      "Collins: Listo, amiguito, vacunado contra sarampión,",
+      "poliomielitis, difteria y paludismo.",
+      "Anabelle, pásame otra jeringa."
+    ],
+    [
+      "A lo lejos, la agente de INTERPAX Julia Mellinguer observa con admiración su labor.",
+      "Mellinguer: ¡Buenos días, Doctor Collins!"
+    ],
+    [
+      "Mellinguer: ¡Qué buen profesional y persona es Collins!",
+      "Merece que alguien lo proteja."
+    ],
+    [
+      "Oficial: Disculpe, doctor, pero debemos revisar su bolso.",
+      "Inspección de rutina, lo hemos hecho con todos los demás aquí.",
+      "Collins: Está bien, no tengo nada que ocultar."
+    ],
+    [
+      "Oficial: ¿Qué tenemos aquí? ¡Diamantes en bruto!",
+      "Collins: ¡Ey, eso no es mío!"
+    ],
+    [
+      "Collins: ¡Yo no tomé eso ni lo puse en el bolso!",
+      "¡Es un error! ¡Alguien lo puso ahí!"
+    ],
+    [
+      "Mellinguer: ¡No puede ser! ¡Se llevan a Collins!",
+      "Esto tiene que ser una trampa..."
+    ],
+    [
+      "Collins es llevado a la prisión de Zalimbwe.",
+      "Acusado de contrabando de diamantes, su trabajo humanitario termina abruptamente."
+    ],
+    [
+      "Mellinguer: No me detengas, Walton. Voy a renunciar a INTERPAX.",
+      "Walton: ¿Ah, sí? ¿No quieres, en cambio, rescatar al muchacho?",
+      "Tengo un plan para sacarlo de allí, pero tendrá que cooperar y hacerme caso.",
+      "Mellinguer: ¡Sí! ¡Pase lo que pase, hagámoslo!"
+    ]
+  ]
+}

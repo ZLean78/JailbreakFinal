@@ -1,0 +1,52 @@
+{
+  "time_per_dialogue": 8,
+  "next_scene": "res://Scenes/Scene2_2/scene_2_2.tscn",
+  "end_delay": 4,
+  "initial_audio": "res://Sound/Shock.mp3",
+  "images": [
+    "01_collins_rahiri.jpeg",
+    "02_smiling_rahiri.png",
+    "03_giving_letter.jpeg",
+    "04_black.png"
+  ],
+  "audio_switches": {
+    "3": "res://Sound/DecisiveMoment.mp3"
+  },
+  "dialogues": [
+    [
+      "¡Tranquilo, no te asustes!...",
+      "No grites, estás con un amigo."
+    ],
+    [
+      "Soy Amir Rahiri, tu contacto en esta prisión.",
+      "Soy de Madagascar y estoy aquí por delitos menores."
+    ],
+    [
+      "Rahiri: Tengo una carta más de Walton para ti.",
+      "Mira, es su letra."
+    ],
+    [
+      "'Querido Geoffrey, si ya has conocido a Amir, vas por buen camino.'",
+      "Él te dará información sobre algunos ítems que te serán de utilidad.",
+      "Deberás continuar hasta la lavandería.",
+      "Ten especial cuidado con el jefe de pabellón, Benjamin Kaluga.'"
+    ],
+    [
+      "'Él es boxeador profesional. Ten cuidado también con su mano derecha, Mbeki Sharaka,",
+      "que es mucho peor y tiene un particular odio por la gente como tú.",
+      "Suerte, Geoffrey Collins.",
+      "Tu amigo, T.F.W."
+    ],
+    [
+      "Rahiri: Detrás del tender hay un botiquín.",
+      "Si cierran las puertas, el conducto a la derecha será la única salida.",
+      "Lamentablemente, lleva al taller de Sharaka,",
+      "pero a esta hora, no debería estar allí."
+    ],
+    [
+      "Collins: ...",
+      "Rahiri: ...Suerte, Geoffrey Collins."
+    ]
+  ],
+  "image_sequence": [1, 2, 3, 4, 4, 3, 3]
+}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfvf5xukufqt3"]
+
+[ext_resource type="Script" uid="uid://cvaebwkxkq2wy" path="res://Scenes/BlueKey/blue_key.gd" id="1_sqk30"]
+[ext_resource type="Texture2D" uid="uid://cmvme6hkl6qqx" path="res://Scenes/BlueKey/BlueKey.png" id="2_istkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2m26"]
+size = Vector2(35, 31)
+
+[node name="BlueKey" type="Node2D"]
+script = ExtResource("1_sqk30")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_istkn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_b2m26")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

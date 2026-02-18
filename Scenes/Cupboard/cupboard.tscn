@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://m862by0xtq66"]
+
+[ext_resource type="Texture2D" uid="uid://ch3bo86ptemaf" path="res://Scenes/Cupboard/Cupboard.png" id="1_xhgt2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja83x"]
+size = Vector2(44, 35)
+
+[node name="Cupboard" type="StaticBody2D"]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -9.53674e-07)
+scale = Vector2(0.511111, 0.436747)
+texture = ExtResource("1_xhgt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_ja83x")

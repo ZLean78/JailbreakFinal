@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://druaxqxl3xdij"]
+
+[ext_resource type="Texture2D" uid="uid://bhbsv11eysl07" path="res://Scenes/LaundrySink/LaundrySink.png" id="1_jhwy6"]
+[ext_resource type="Script" uid="uid://b5hdbei1gmqlg" path="res://Scenes/LaundrySink/laundry_sink.gd" id="1_km81p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km81p"]
+size = Vector2(42, 64)
+
+[node name="LaundrySink" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_km81p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jhwy6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_km81p")

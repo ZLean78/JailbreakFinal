@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://cu3rduelwl4bu"]
+
+[ext_resource type="Script" uid="uid://cx1kwpao2atc5" path="res://Scenes/Guard/guard.gd" id="1_dxgcx"]
+[ext_resource type="Texture2D" uid="uid://jiqii5780od1" path="res://Resources/Textures/guardWalk.png" id="2_2t02l"]
+[ext_resource type="Texture2D" uid="uid://baykl8qrnp3wr" path="res://Scenes/Guard/LightRange.png" id="4_rojh0"]
+[ext_resource type="Script" uid="uid://ckbqbkc1tdwlw" path="res://Scenes/Guard/vision_cone.gd" id="5_wr0ba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igjbq"]
+size = Vector2(25.0001, 22)
+
+[sub_resource type="Animation" id="Animation_sag64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2t02l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xc334"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_2t02l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.32, 0.57),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdiqc"]
+_data = {
+&"RESET": SubResource("Animation_sag64"),
+&"Walk": SubResource("Animation_xc334")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t02l"]
+radius = 21.2132
+
+[node name="Guard" type="CharacterBody2D"]
+rotation = 1.5708
+collision_layer = 8
+script = ExtResource("1_dxgcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1, 0.96875)
+texture = ExtResource("2_2t02l")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.500006, -0.999998)
+shape = SubResource("RectangleShape2D_igjbq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pdiqc")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-3.57628e-06, -1)
+target_position = Vector2(-0.000362043, -100)
+collision_mask = 3
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0.999996, -1)
+target_position = Vector2(-34.0004, -99.9999)
+collision_mask = 3
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+position = Vector2(-7.21216e-06, -2)
+target_position = Vector2(35.9996, -100)
+collision_mask = 3
+
+[node name="VisionCone" type="Node2D" parent="." node_paths=PackedStringArray("enemy_body")]
+script = ExtResource("5_wr0ba")
+enemy_body = NodePath("..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Spawner" type="Marker2D" parent="."]
+
+[node name="StepAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="NoticeAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_2t02l")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.624608, 0.569937)
+texture = ExtResource("4_rojh0")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://bm3iagem4qdgn"]
+
+[ext_resource type="Texture2D" uid="uid://bn0xixrl8742j" path="res://Scenes/WashingMachine/Door.png" id="1_2surk"]
+[ext_resource type="Texture2D" uid="uid://boc2ud17d3ukg" path="res://Scenes/WashingMachine/WashingMachine.png" id="1_dkv05"]
+[ext_resource type="Script" uid="uid://ddjyhwcfyqmto" path="res://Scenes/WashingMachine/washing_machine.gd" id="1_trj7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trj7j"]
+size = Vector2(9, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2surk"]
+size = Vector2(62, 62)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_trj7j"]
+polygon = PackedVector2Array(5, -31.5, 5, 32.5, 67, 32.5, 67, -31.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84m0k"]
+
+[sub_resource type="Animation" id="Animation_2surk"]
+resource_name = "OpenClose"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorHinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.48353]
+}
+
+[sub_resource type="Animation" id="Animation_trj7j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorHinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_84m0k"]
+_data = {
+&"OpenClose": SubResource("Animation_2surk"),
+&"RESET": SubResource("Animation_trj7j")
+}
+
+[node name="WashingMachine" type="StaticBody2D"]
+script = ExtResource("1_trj7j")
+
+[node name="DoorHinge" type="Node2D" parent="."]
+position = Vector2(-31, -15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DoorHinge"]
+position = Vector2(-5, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorHinge/StaticBody2D"]
+position = Vector2(0, 16)
+texture = ExtResource("1_2surk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHinge/StaticBody2D"]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_trj7j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dkv05")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2surk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D"]
+position = Vector2(-36, -0.5)
+occluder = SubResource("OccluderPolygon2D_trj7j")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-54, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_84m0k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_84m0k")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqynknw35vefx"]
+
+[ext_resource type="Script" uid="uid://bsg06nugo7obs" path="res://Scenes/Dog/dog.gd" id="1_bqn5w"]
+[ext_resource type="Texture2D" uid="uid://y376qi75oewh" path="res://Resources/Textures/dog_spritesheet.png" id="1_m6g6x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqn5w"]
+radius = 28.1603
+
+[sub_resource type="Animation" id="Animation_bqn5w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1nmv4"]
+resource_name = "walk_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.26, 0.4, 0.61, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_crqp7"]
+resource_name = "walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17, 0.38, 0.51, 0.7, 0.88),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_m6g6x"]
+resource_name = "walk_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.28, 0.47, 0.64, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_oqr8j"]
+resource_name = "walk_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.32, 0.47, 0.65, 0.82),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqn5w"]
+_data = {
+&"RESET": SubResource("Animation_bqn5w"),
+&"walk_down": SubResource("Animation_1nmv4"),
+&"walk_left": SubResource("Animation_crqp7"),
+&"walk_right": SubResource("Animation_m6g6x"),
+&"walk_up": SubResource("Animation_oqr8j")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqn5w"]
+
+[node name="Dog" type="CharacterBody2D" groups=["dogs"]]
+collision_mask = 3
+script = ExtResource("1_bqn5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-126, -124)
+texture = ExtResource("1_m6g6x")
+centered = false
+hframes = 6
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bqn5w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bqn5w")
+}
+
+[node name="DamageTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(40, 0)
+shape = SubResource("RectangleShape2D_bqn5w")
+debug_color = Color(0.770033, 0.280943, 0.216683, 0.42)
+
+[node name="TailObjective" type="Marker2D" parent="."]
+position = Vector2(-36, -49)
+
+[node name="TailOjectiveTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_damage_area_body_exited"]
+[connection signal="timeout" from="TailOjectiveTimer" to="." method="_on_tail_ojective_timer_timeout"]

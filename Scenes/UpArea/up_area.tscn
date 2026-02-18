@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://fglq3mvqmgrt"]
+
+[ext_resource type="Script" uid="uid://luoq57snsw4e" path="res://Scenes/UpArea/up_area2.gd" id="1_sqjb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t63u"]
+size = Vector2(79, 79)
+
+[node name="UpArea" type="Node2D"]
+script = ExtResource("1_sqjb5")
+
+[node name="UpArea" type="Area2D" parent="."]
+position = Vector2(1, 1)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0t63u")
+
+[connection signal="body_exited" from="UpArea" to="." method="_on_up_area_body_exited"]

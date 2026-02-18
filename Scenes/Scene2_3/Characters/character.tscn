@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cal82tgbeade3"]
+
+[ext_resource type="Script" uid="uid://dbysmd8y8vnyw" path="res://Scenes/Scene2_3/Characters/character.gd" id="1_7qr7h"]
+[ext_resource type="Texture2D" uid="uid://c0vcy542p18o8" path="res://Scenes/Scene2_3/art/characters/shadow.png" id="1_vu0vm"]
+[ext_resource type="PackedScene" uid="uid://cxhrgjw0dimvr" path="res://Scenes/Scene2_3/Colliders/damage_emitter.tscn" id="2_lmtek"]
+[ext_resource type="PackedScene" uid="uid://dtbmx6kytg6jy" path="res://Scenes/Scene2_3/Colliders/damage_receiver.tscn" id="3_7qr7h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eu1pv"]
+radius = 2.0
+height = 10.0
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_7qr7h")
+
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_vu0vm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_eu1pv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="DamageEmitter" parent="." instance=ExtResource("2_lmtek")]
+monitoring = false
+monitorable = false
+
+[node name="DamageReceiver" parent="." instance=ExtResource("3_7qr7h")]
+monitoring = false
+
+[node name="CollateralDamageEmitter" parent="." instance=ExtResource("2_lmtek")]
+monitoring = false
+monitorable = false
+
+[editable path="DamageEmitter"]
+[editable path="DamageReceiver"]
+[editable path="CollateralDamageEmitter"]

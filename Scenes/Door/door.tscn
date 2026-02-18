@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://j238ror8bmpc"]
+
+[ext_resource type="Texture2D" uid="uid://csmicgbayamef" path="res://Scenes/Door/Door.png" id="1_gv3j8"]
+[ext_resource type="Script" uid="uid://dnfmb37bgx2tw" path="res://Scenes/Door/door.gd" id="1_rl688"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl688"]
+size = Vector2(62, 9)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rl688"]
+cull_mode = 2
+polygon = PackedVector2Array(1, -4, 1, 2, 62, 2, 62, -5)
+
+[sub_resource type="Animation" id="Animation_rl688"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gv3j8"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwb6t"]
+_data = {
+&"RESET": SubResource("Animation_rl688"),
+&"open": SubResource("Animation_gv3j8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwb6t"]
+size = Vector2(62, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3viil"]
+size = Vector2(65, 53)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_rl688")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(33, 0)
+texture = ExtResource("1_gv3j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32, 0.5)
+shape = SubResource("RectangleShape2D_rl688")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_rl688")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vwb6t")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(33, -32)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vwb6t")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(34, 31)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_3viil")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_body_exited"]

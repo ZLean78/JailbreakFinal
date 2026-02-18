@@ -1,0 +1,120 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0f1dh0r4tpmx"]
+
+[ext_resource type="Script" uid="uid://d137kciugdgu8" path="res://Scenes/Cinematic_Intro/cinematic_intro.gd" id="1_tuwjx"]
+[ext_resource type="Texture2D" uid="uid://clsykvqkbgvli" path="res://Scenes/Cinematic_Intro/HospitalGPT.png" id="2_n4om3"]
+[ext_resource type="Texture2D" uid="uid://ch2ydjafrg328" path="res://Scenes/Cinematic_Intro/CollinsWorkingGPT.png" id="3_7fanc"]
+[ext_resource type="Texture2D" uid="uid://w1sd7kr61ptg" path="res://Scenes/Cinematic_Intro/MellingerSatisfied.png" id="4_6yuoq"]
+[ext_resource type="Texture2D" uid="uid://cg0wpf22vyfpj" path="res://Scenes/Cinematic_Intro/MellingerWatching.png" id="5_yciuc"]
+[ext_resource type="Texture2D" uid="uid://iuq0arvc806s" path="res://Scenes/Cinematic_Intro/CollinsInspectedGPT.png" id="6_estv1"]
+[ext_resource type="Texture2D" uid="uid://b7e3ydhgk5k1c" path="res://Scenes/Cinematic_Intro/DiamantesEnBruto.png" id="7_avxui"]
+[ext_resource type="Texture2D" uid="uid://bdqn5idwks0tl" path="res://Scenes/Cinematic_Intro/CollinsArrested.png" id="7_d0qoa"]
+[ext_resource type="Texture2D" uid="uid://dbeqddd72pmrc" path="res://Scenes/Cinematic_Intro/MellinguerShockeadaDibujo.png" id="8_gotj5"]
+[ext_resource type="Texture2D" uid="uid://bhpq27ok61d7q" path="res://Scenes/Cinematic_Intro/CollinsArrestedOutside.png" id="9_sgtxc"]
+[ext_resource type="Texture2D" uid="uid://dca3rjuyblqi5" path="res://Scenes/Cinematic_Intro/MellingerWaltonDibujo.png" id="9_wdxsq"]
+[ext_resource type="AudioStream" uid="uid://chihl4dmyy8sd" path="res://Scenes/Cinematic_Intro/AfricanMorning.mp3" id="12_nsxag"]
+
+[node name="Cinematic_1" type="Node2D"]
+script = ExtResource("1_tuwjx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1148.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="HospitalGpt" type="TextureRect" parent="."]
+offset_left = 385.0
+offset_top = 33.0
+offset_right = 767.0
+offset_bottom = 411.0
+texture = ExtResource("2_n4om3")
+expand_mode = 1
+
+[node name="CollinsWorkingGpt" type="TextureRect" parent="."]
+visible = false
+offset_left = 384.0
+offset_top = 28.0
+offset_right = 769.0
+offset_bottom = 413.0
+texture = ExtResource("3_7fanc")
+expand_mode = 1
+
+[node name="MellingerWatching" type="TextureRect" parent="."]
+visible = false
+offset_left = 457.0
+offset_top = 2.0
+offset_right = 749.0
+offset_bottom = 440.0
+texture = ExtResource("5_yciuc")
+expand_mode = 1
+
+[node name="MellingerSatisfied" type="TextureRect" parent="."]
+visible = false
+offset_left = 262.0
+offset_top = 18.0
+offset_right = 895.0
+offset_bottom = 440.0
+texture = ExtResource("4_6yuoq")
+expand_mode = 1
+
+[node name="CollinsInspectedGpt" type="TextureRect" parent="."]
+visible = false
+offset_left = 257.0
+offset_top = 13.0
+offset_right = 898.0
+offset_bottom = 440.0
+texture = ExtResource("6_estv1")
+expand_mode = 1
+
+[node name="RawDiamonds" type="TextureRect" parent="."]
+visible = false
+offset_left = 257.0
+offset_top = 13.0
+offset_right = 898.0
+offset_bottom = 440.0
+texture = ExtResource("7_avxui")
+expand_mode = 1
+
+[node name="CollinsArrested" type="TextureRect" parent="."]
+visible = false
+offset_left = 257.0
+offset_top = 13.0
+offset_right = 898.0
+offset_bottom = 440.0
+texture = ExtResource("7_d0qoa")
+expand_mode = 1
+
+[node name="MellinguerShocked" type="TextureRect" parent="."]
+visible = false
+offset_left = 472.0
+offset_top = 11.0
+offset_right = 726.0
+offset_bottom = 412.0
+texture = ExtResource("8_gotj5")
+expand_mode = 1
+
+[node name="CollinsArrestedOutside" type="TextureRect" parent="."]
+visible = false
+offset_left = 257.0
+offset_top = 13.0
+offset_right = 898.0
+offset_bottom = 440.0
+texture = ExtResource("9_sgtxc")
+expand_mode = 1
+
+[node name="MellinguerWalton" type="TextureRect" parent="."]
+visible = false
+offset_left = 383.0
+offset_top = 5.0
+offset_right = 786.0
+offset_bottom = 412.0
+texture = ExtResource("9_wdxsq")
+expand_mode = 1
+
+[node name="DialogueLabel" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 542.0
+offset_right = 190.0
+offset_bottom = 565.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nsxag")

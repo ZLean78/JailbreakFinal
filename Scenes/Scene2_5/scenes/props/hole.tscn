@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://ggibf5ub3k06"]
+
+[ext_resource type="Texture2D" uid="uid://cydwajcwelden" path="res://Scenes/Scene2_5/assets/art/prompts/gas.png" id="1_ld0uf"]
+[ext_resource type="Script" uid="uid://bt0egr7o5axjb" path="res://Scenes/Scene2_5/scenes/props/hole.gd" id="1_lqjbq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqm3d"]
+size = Vector2(163.5, 105)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ld0uf"]
+
+[sub_resource type="Curve" id="Curve_lqjbq"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -500), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lqjbq"]
+curve = SubResource("Curve_lqjbq")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_lip1x"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lcv88"]
+angle_min = 1.07288e-05
+angle_max = 90.0
+angle_curve = SubResource("CurveTexture_lqjbq")
+spread = 0.0
+initial_velocity_min = 75.0
+initial_velocity_max = 297.83
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 79.2
+directional_velocity_min = 37.0
+directional_velocity_max = 37.0
+directional_velocity_curve = SubResource("CurveXYZTexture_lip1x")
+gravity = Vector3(0, 98, 0)
+turbulence_enabled = true
+
+[node name="Hole" type="Node2D" groups=["hole"]]
+script = ExtResource("1_lqjbq")
+
+[node name="Area" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(81.25, 51.5)
+shape = SubResource("RectangleShape2D_wqm3d")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+z_index = 1
+material = SubResource("CanvasItemMaterial_ld0uf")
+emitting = false
+amount = 12
+texture = ExtResource("1_ld0uf")
+lifetime = 3.0
+speed_scale = 6.31
+explosiveness = 0.09
+randomness = 0.13
+collision_base_size = 7.15
+visibility_rect = Rect2(-100, -100, 300, 200)
+process_material = SubResource("ParticleProcessMaterial_lcv88")
+
+[node name="ActivatedTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
+[connection signal="timeout" from="ActivatedTimer" to="." method="_on_activated_timer_timeout"]

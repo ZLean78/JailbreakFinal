@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgh5kbjlujp2e"]
+
+[ext_resource type="Script" uid="uid://cijdacrmi0l1y" path="res://Scenes/Meat/meat.gd" id="1_sgjvd"]
+[ext_resource type="Texture2D" uid="uid://c82a7h010muf8" path="res://Resources/Textures/puertas64_0.png" id="2_rtw48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixefi"]
+
+[node name="Meat" type="Node2D"]
+script = ExtResource("1_sgjvd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, -0.999999)
+scale = Vector2(0.390625, 1.875)
+texture = ExtResource("2_rtw48")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ixefi")
+debug_color = Color(0.751267, 0.241711, 0.194686, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

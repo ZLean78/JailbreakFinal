@@ -1,0 +1,59 @@
+{
+  "time_per_dialogue": 8,
+  "next_scene": "res://Scenes/Scene1/scene_1.tscn",
+  "end_delay": 5,
+  "initial_audio": "res://Sound/Intro_Theme.mp3",
+  "images": [
+    "01_black.png",
+    "02_collins_walton.jpeg",
+    "03_collins_walton_table.jpeg",
+    "04_walton.png",
+    "05_collins_confused.jpeg"
+  ],
+  "audio_switches": {
+    "6": "res://Sound/Cinematic_1_valid2.mp3"
+  },
+  "dialogues": [
+    [
+      "Guardia: Dr. Geoffrey Collins, su abogado está aquí."
+    ],
+    [
+      "Walton: Soy Thomas Frederic Walton y he asumido el rol de tu abogado.",
+      "Collins: Creí que tenía derecho a escoger mi abogado.",
+      "Walton: Confía en mí, estás en buenas manos.",
+      "Entremos, por favor."
+    ],
+    [
+      "Walton: Lo que te voy a decir ahora es horroroso, pero es la verdad.",
+      "Te preguntarás '¿cómo es que este viejo viene hasta aquí",
+      "diciendo ser mi abogado y luego me cuenta esto?'."
+    ],
+    [
+      "Walton: Me encantaría poder defenderte ante un estrado",
+      "y que salieras en libertad, ganando airoso contra estos desgraciados.",
+      "Pero la verdad, Geoffrey, es que alguien trata de matarte,",
+      "por eso te puso aquí."
+    ],
+    [
+      "Walton: Yo soy abogado, sí, pero mi rol de abogado en esta historia es una fachada.",
+      "Estoy aquí para ayudarte a salir de este nido de ratas."
+    ],
+    [
+      "Collins: ¿Alguien quiere matarme? ¿¡Quién!?",
+      "Walton: Sé que mi historia no suena nada convincente, pero debes creerme.",
+      "No sólo estoy haciendo esto por ti, sino por alguien a quien le preocupas mucho.",
+      "Tú no la conoces demasiado, pero ELLA sí te conoce a ti."
+    ],
+    [
+      "Walton: Ahora, vamos a entrenarte, para que puedas escapar.",
+      "Tengo algo aquí para ti, un libro. Parece poco, pero es la llave para dar el primer paso.",
+      "Examínalo cuando vuelvas a tu celda, busca una forma de salir de allí, y explora los alrededores sin ser visto."
+    ],
+    [
+      "Collins: ¿Pero, quién quiere matarme?",
+      "Walton: No te conviene saberlo ahora, sólo haz lo que te digo, y confía en mí.",
+      "Suerte, Geoffrey Collins."
+    ]
+  ],
+  "image_sequence": [1, 2, 3, 4, 4, 5, 4, 2]
+}

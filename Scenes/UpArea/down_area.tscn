@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://coiwp58axqjbj"]
+
+[ext_resource type="Script" uid="uid://bke4scwa5hxbl" path="res://Scenes/UpArea/down_area.gd" id="1_ory06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drv8l"]
+size = Vector2(17, 60)
+
+[node name="DownArea" type="Node2D"]
+script = ExtResource("1_ory06")
+
+[node name="DownArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
+shape = SubResource("RectangleShape2D_drv8l")
+
+[connection signal="body_entered" from="DownArea" to="." method="_on_down_area_body_entered"]

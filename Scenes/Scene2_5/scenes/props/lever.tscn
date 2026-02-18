@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://btan8ykffivoq"]
+
+[ext_resource type="Script" uid="uid://d87bmi77o47j" path="res://Scenes/Scene2_5/scenes/props/lever.gd" id="1_h7qt8"]
+[ext_resource type="Texture2D" uid="uid://41g2tio62ysp" path="res://Scenes/Scene2_5/assets/art/prompts/lever_base.png" id="1_p67in"]
+[ext_resource type="Texture2D" uid="uid://cbe615iylo32r" path="res://Scenes/Scene2_5/assets/art/prompts/lever.png" id="2_h7qt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma7hq"]
+size = Vector2(24, 82)
+
+[sub_resource type="Animation" id="Animation_h7qt8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Axis:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_p67in"]
+resource_name = "activate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Axis:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.785398]
+}
+
+[sub_resource type="Animation" id="Animation_61j7i"]
+resource_name = "deactivate"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Axis:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.785398, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ma7hq"]
+resource_name = "idle"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Axis:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h7qt8"]
+_data = {
+&"RESET": SubResource("Animation_h7qt8"),
+&"activate": SubResource("Animation_p67in"),
+&"deactivate": SubResource("Animation_61j7i"),
+&"idle": SubResource("Animation_ma7hq")
+}
+
+[node name="Lever" type="Node2D" groups=["lever"]]
+script = ExtResource("1_h7qt8")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("1_p67in")
+
+[node name="Axis" type="Node2D" parent="."]
+position = Vector2(0, -17)
+
+[node name="Lever" type="Sprite2D" parent="Axis"]
+position = Vector2(0.252913, -26.9988)
+texture = ExtResource("2_h7qt8")
+
+[node name="Area" type="Area2D" parent="."]
+position = Vector2(0, -49)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_ma7hq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h7qt8")
+}
+autoplay = "idle"

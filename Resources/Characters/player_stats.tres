@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://bqmlh3xa0xgpk"]
+
+[ext_resource type="Script" uid="uid://b8m8dbg64vi5n" path="res://Core/Resources/CharacterStats.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+max_health = 100
+starting_health = 0
+can_regenerate = false
+regeneration_rate = 0.0
+speed = 150.0
+acceleration = 10.0
+friction = 10.0
+base_damage = 15
+power_damage = 25
+attack_animations = Array[String](["punch", "punch_alt", "kick", "roundkick"])
+combo_window = 0.5
+jump_intensity = 200.0
+knockback_intensity = 200.0
+knockdown_intensity = 150.0
+flight_speed = 300.0
+gravity = 600.0
+grounded_duration = 0.5
+hurt_duration = 0.5
+stun_duration = 1.0
+attack_cooldown = 0.0
