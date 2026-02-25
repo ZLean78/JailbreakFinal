@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1771461188
+::res://::1772006310
 cinematic-image-prompts.md::TextFile/TextFile::-1::1770150674::0::1::::<><><>0<>0<><>::
 cinematic-story-improvements.md::TextFile/TextFile::-1::1770150674::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile/TextFile::-1::1771447666::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1772005646::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::9004363797132709836::1748189278::1749307240::1::::<><><>0<>0<>2653100a901b2e96c2bddca7e8f818c3<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 Item_Container.gd::GDScript/GDScript::3418667053036681300::1760833618::0::1::::<>Control<><>0<>0<><>::
 rahiri.gd::GDScript/GDScript::1846437847344232823::1770150674::0::1::::<>CharacterBody2D<><>0<>0<><>::
@@ -157,7 +157,7 @@ TakeoffState.gd::GDScript/GDScript::7382229142447494185::1771098518::0::1::::Tak
 WalkState.gd::GDScript/GDScript::7676216697695942055::1770150659::0::1::::WalkState<>State<><>0<>0<><>::
 ::res://docs/::1771449260
 MIGRATION_GUIDE.md::TextFile/TextFile::-1::1770150674::0::1::::<><><>0<>0<><>::
-::res://Export/::1771449148
+::res://Export/::1772005807
 ::res://Fonts/::1771449260
 StencilStd.otf::FontFile/FontFile::2377425505997071765::1327605168::1761693668::1::::<><><>0<>0<>7f5283908e4049101bf6d96e910f5ecc<>res://.godot/imported/StencilStd.otf-b58a8cfd2c29d94d9a9fc404893f8596.fontdata::
 ::res://Resources/::1771449217
@@ -171,11 +171,11 @@ Player5.png::CompressedTexture2D/CompressedTexture2D::1878414227388483069::17494
 Player6.png::CompressedTexture2D/CompressedTexture2D::7757370106986451275::1749419902::1749419932::1::::<><><>0<>0<>084a17d9d02a0ca62198b968e959dff9<>res://.godot/imported/Player6.png-5e0cca403237fa366a499446b6b18767.ctex::
 Player7.png::CompressedTexture2D/CompressedTexture2D::8128093318850223912::1749419922::1749419932::1::::<><><>0<>0<>31d93bb1a76a08746f5df4aa870acef7<>res://.godot/imported/Player7.png-389fb42b31a2f4001f4514cbf3143e8b.ctex::
 Player.png::CompressedTexture2D/CompressedTexture2D::3542230505797006113::1755999678::1755999704::1::::<><><>0<>0<>dfe2bbd38a57623230c793b9250e5bef<>res://.godot/imported/Player.png-842cd5f4656a15dcfab5d2901c13ce5e.ctex::
-::res://Resources/Characters/::1771449999
+::res://Resources/Characters/::1772001735
 kaluga_config.tres::Resource/CharacterConfig::6537802084070474705::1771111075::0::1::::<><><>0<>0<><>::uid://uoqtegtjar2l::::res://Core/Resources/CharacterConfig.gd<>uid://8tdcvnunj0kc::::res://Resources/Characters/kaluga_stats.tres
 kaluga_stats.tres::Resource/CharacterStats::2355641863947587858::1771111075::0::1::::<><><>0<>0<><>::uid://b8m8dbg64vi5n::::res://Core/Resources/CharacterStats.gd
-player_config.tres::Resource/CharacterConfig::2297849376353421575::1771449999::0::1::::<><><>0<>0<><>::uid://uoqtegtjar2l::::res://Core/Resources/CharacterConfig.gd<>uid://bqmlh3xa0xgpk::::res://Resources/Characters/player_stats.tres
-player_stats.tres::Resource/CharacterStats::3534896608646727336::1771449999::0::1::::<><><>0<>0<><>::uid://b8m8dbg64vi5n::::res://Core/Resources/CharacterStats.gd
+player_config.tres::Resource/CharacterConfig::2297849376353421575::1772001735::0::1::::<><><>0<>0<><>::uid://uoqtegtjar2l::::res://Core/Resources/CharacterConfig.gd<>uid://bqmlh3xa0xgpk::::res://Resources/Characters/player_stats.tres
+player_stats.tres::Resource/CharacterStats::3534896608646727336::1772001735::0::1::::<><><>0<>0<><>::uid://b8m8dbg64vi5n::::res://Core/Resources/CharacterStats.gd
 sharaka_config.tres::Resource/CharacterConfig::-1::1770150660::0::1::::<><><>0<>0<><>::res://Core/Resources/CharacterConfig.gd<>res://Resources/Characters/sharaka_stats.tres
 sharaka_stats.tres::Resource/CharacterStats::-1::1770150660::0::1::::<><><>0<>0<><>::res://Core/Resources/CharacterStats.gd
 ::res://Resources/Sounds/::1771449217
@@ -394,7 +394,7 @@ bullet.tscn::PackedScene/PackedScene::4604944881500404551::1770150664::0::1::::<
 EnemySlot.gd::GDScript/GDScript::2947753517352040094::1770150664::0::1::::EnemySlot<>Node2D<><>0<>0<><>::
 KalugaCharacter.gd::GDScript/GDScript::5669129103729894406::1771104696::0::1::::KalugaCharacter<>BaseCharacter<><>0<>0<><>::
 PlayerCharacter.gd::GDScript/GDScript::1260522992710779544::1771090433::0::1::::PlayerCharacter<>BaseCharacter<><>0<>0<><>::
-SharakaCharacter.gd::GDScript/GDScript::4527494254110466835::1771113664::0::1::::SharakaCharacter<>BaseCharacter<><>0<>0<><>::
+SharakaCharacter.gd::GDScript/GDScript::4527494254110466835::1772004621::0::1::::SharakaCharacter<>BaseCharacter<><>0<>0<><>::
 ::res://Scenes/Cinematic_1/::1771449221
 black_rectangle.png::CompressedTexture2D/CompressedTexture2D::8566488609946736175::1747014648::1761695334::1::::<><><>0<>0<>425e59a5eb3c4c796fde3d16f49e5cd9<>res://.godot/imported/black_rectangle.png-cf0a77d66873e0b02cea052395bc240c.ctex::
 Cinematic1.mp3::AudioStreamMP3/AudioStreamMP3::1308268942547575170::1747191912::1761695790::1::::<><><>0<>0<>c1ad77840b600f8172d4528c9a46456d<>res://.godot/imported/Cinematic1.mp3-65778e8097cd14fe7afd90572b49f2e2.mp3str::
@@ -689,7 +689,7 @@ Walk_Cycle.png::CompressedTexture2D/CompressedTexture2D::1344985785253010222::17
 enemy_punk.png::CompressedTexture2D/CompressedTexture2D::871588555815790447::1754536912::1756162684::1::::<><><>0<>0<>5bd9e42d769999042595d934f46d81e8<>res://.godot/imported/enemy_punk.png-096f9b4e306d98796537d38d45639b26.ctex::
 ::res://Scenes/Scene2_3/art/characters/spritesheet backup/::1771449225
 CollinsFinal.png::CompressedTexture2D/CompressedTexture2D::436074026855150268::1755547666::1762988290::1::::<><><>0<>0<>1a9450ddf73c12bc8c8e9c6f12db709e<>res://.godot/imported/CollinsFinal.png-58be9004b29700f840de93d2e181b433.ctex::
-::res://Scenes/Scene2_3/Characters/::1771449999
+::res://Scenes/Scene2_3/Characters/::1772005613
 basic_enemy.gd::GDScript/GDScript::1149299038149533604::1770150670::0::1::::BasicEnemy<>Character<><>0<>0<><>::
 character.gd::GDScript/GDScript::7280110505895411954::1771098518::0::1::::Character<>CharacterBody2D<><>0<>0<><>::
 character.tscn::PackedScene/PackedScene::4797602407140848784::1768665112::0::1::::<><><>0<>0<><>::uid://dbysmd8y8vnyw::::res://Scenes/Scene2_3/Characters/character.gd<>uid://c0vcy542p18o8::::res://Scenes/Scene2_3/art/characters/shadow.png<>uid://cxhrgjw0dimvr::::res://Scenes/Scene2_3/Colliders/damage_emitter.tscn<>uid://dtbmx6kytg6jy::::res://Scenes/Scene2_3/Colliders/damage_receiver.tscn
@@ -701,13 +701,13 @@ idle.png::CompressedTexture2D/CompressedTexture2D::7889826764237470292::17561578
 jump_attack.png::CompressedTexture2D/CompressedTexture2D::8006708802703747717::1756158814::1756161640::1::::<><><>0<>0<>6e0dbe79e7cd9e774fe6b13c6f4a375f<>res://.godot/imported/jump_attack.png-fffec616e960cb975f61158670b65dce.ctex::
 jump_ground.png::CompressedTexture2D/CompressedTexture2D::7838308044988534916::1756159232::1756161640::1::::<><><>0<>0<>e7fca2d1ec554f33cd49524c13e01fe1<>res://.godot/imported/jump_ground.png-ff55d9e52c7c399b26e1eecfe976adbc.ctex::
 player.gd::GDScript/GDScript::8066621452483580164::1771098518::0::1::::Player<>Character<><>0<>0<><>::
-player.tscn::PackedScene::7723426062843527038::1771449999::0::1::::<><><>0<>0<><>::uid://r7uvny4h4eei::::res://Scenes/Characters/PlayerCharacter.gd<>uid://70dijq4iakyp::::res://Resources/Characters/player_config.tres<>uid://b377oa576tmpy::::res://Scenes/Scene2_3/Characters/enemy_slot.tscn<>uid://cj0iagrqpen8e::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Idle_2.png<>uid://3evioqqhbuqj::::res://Resources/Textures/Collins_new_anims/Collins/Collins_roll_2.png<>uid://c0vcy542p18o8::::res://Scenes/Scene2_3/art/characters/shadow.png<>uid://b5mbvomfa8782::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Fall_2.png<>uid://6xa3i0py1w67::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Hurt_2.png<>uid://c65p6mg55uokf::::res://Core/Combat/DamageEmitter.gd<>uid://dj4oolnjvk1dc::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Punch_2.png<>uid://bqwrumnwecvgx::::res://Core/Combat/DamageReceiver.gd<>uid://be5sui0gav4fp::::res://Resources/Textures/Collins_new_anims/Collins/Walk_Cycle_2.png<>uid://bbg1ygcljuf1l::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Jump_2.png<>uid://bbiv6b8rgfe57::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Kick_2.png
+player.tscn::PackedScene/PackedScene::7723426062843527038::1772005611::0::1::::<><><>0<>0<><>::uid://r7uvny4h4eei::::res://Scenes/Characters/PlayerCharacter.gd<>uid://70dijq4iakyp::::res://Resources/Characters/player_config.tres<>uid://b377oa576tmpy::::res://Scenes/Scene2_3/Characters/enemy_slot.tscn<>uid://cj0iagrqpen8e::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Idle_2.png<>uid://3evioqqhbuqj::::res://Resources/Textures/Collins_new_anims/Collins/Collins_roll_2.png<>uid://c0vcy542p18o8::::res://Scenes/Scene2_3/art/characters/shadow.png<>uid://b5mbvomfa8782::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Fall_2.png<>uid://6xa3i0py1w67::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Hurt_2.png<>uid://c65p6mg55uokf::::res://Core/Combat/DamageEmitter.gd<>uid://dj4oolnjvk1dc::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Punch_2.png<>uid://bqwrumnwecvgx::::res://Core/Combat/DamageReceiver.gd<>uid://be5sui0gav4fp::::res://Resources/Textures/Collins_new_anims/Collins/Walk_Cycle_2.png<>uid://bbg1ygcljuf1l::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Jump_2.png<>uid://bbiv6b8rgfe57::::res://Resources/Textures/Collins_new_anims/Collins/Collins_Kick_2.png
 running_crawl2.png::CompressedTexture2D/CompressedTexture2D::293411335729481808::1756160882::1756161640::1::::<><><>0<>0<>13bde1568fc402d4b8d1cc1eba766906<>res://.godot/imported/running_crawl2.png-f1ebf787f137eb94e569455e56c66238.ctex::
 running_crawl3.png::CompressedTexture2D/CompressedTexture2D::4872281167414934861::1756161216::1756161640::1::::<><><>0<>0<>8cb8405f853aa4cbf9353f4df3ac09a7<>res://.godot/imported/running_crawl3.png-b053b6470de15630e6961e5188b4f9d1.ctex::
 running_crawl4.png::CompressedTexture2D/CompressedTexture2D::6965326554109969291::1756161540::1756161640::1::::<><><>0<>0<>5c71ba982982be1fb9ab06a7aac566ca<>res://.godot/imported/running_crawl4.png-ad2fd416b3d8f31562673ec1ec29c1cd.ctex::
 running_crawl.png::CompressedTexture2D/CompressedTexture2D::289140447659491511::1756160518::1756161640::1::::<><><>0<>0<>4444c1b5458f5cb3c9b35cd651dc8ff4<>res://.godot/imported/running_crawl.png-45ad818f1b5b10a4d6620d39b0678300.ctex::
 sharaka.gd::GDScript/GDScript::7593604889005358473::1770150671::0::1::::<>CharacterBody2D<><>0<>0<><>::
-sharaka.tscn::PackedScene::9213809889111587540::1771449999::0::1::::<><><>0<>0<><>::uid://cal82tgbeade3::::res://Scenes/Scene2_3/Characters/character.tscn<>uid://b5rff0ib2ibhr::::res://Scenes/Characters/SharakaCharacter.gd<>uid://bwdcdlu1o1bog::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Fall.png<>uid://c65p6mg55uokf::::res://Core/Combat/DamageEmitter.gd<>uid://dnjmm7yxq1oud::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Idle.png<>uid://b2swueycuoewg::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Walk_Cycle_2.png<>uid://bqwrumnwecvgx::::res://Core/Combat/DamageReceiver.gd<>uid://cjgole0ibqn6j::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Beaten.png<>uid://iqlhie3w7d0a::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Ground.png<>uid://dcrmh6q6s4cmv::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Hit.png<>uid://h4l7yhj78lmx::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Stab.png<>uid://dbsyfgv6nkpf6::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Jump.png<>uid://cnr6wqjecck13::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_To_Jump.png
+sharaka.tscn::PackedScene/PackedScene::9213809889111587540::1772005613::0::1::::<><><>0<>0<><>::uid://cal82tgbeade3::::res://Scenes/Scene2_3/Characters/character.tscn<>uid://b5rff0ib2ibhr::::res://Scenes/Characters/SharakaCharacter.gd<>uid://bwdcdlu1o1bog::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Fall.png<>uid://c65p6mg55uokf::::res://Core/Combat/DamageEmitter.gd<>uid://dnjmm7yxq1oud::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Idle.png<>uid://b2swueycuoewg::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Walk_Cycle_2.png<>uid://bqwrumnwecvgx::::res://Core/Combat/DamageReceiver.gd<>uid://cjgole0ibqn6j::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Beaten.png<>uid://iqlhie3w7d0a::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Ground.png<>uid://dcrmh6q6s4cmv::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Hit.png<>uid://h4l7yhj78lmx::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Stab.png<>uid://dbsyfgv6nkpf6::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_Jump.png<>uid://cnr6wqjecck13::::res://Resources/Textures/Sharaka_New_Anims/Sharaka_To_Jump.png
 stab.png::CompressedTexture2D/CompressedTexture2D::1525921845028989314::1756159802::1756161640::1::::<><><>0<>0<>e780de391d856e6282ebd655dd6512aa<>res://.godot/imported/stab.png-d7e4b0a2f1a79049e41723d1adda2e8f.ctex::
 ::res://Scenes/Scene2_3/Colliders/::1771449226
 damage_emitter.gd::GDScript/GDScript::8529273542752123883::1770150671::0::1::::<>Area2D<><>0<>0<><>::

@@ -151,6 +151,11 @@ func _on_attack_complete() -> void:
 
 ## Flash white when taking damage.
 func _on_damage_received(damage_data: DamageData, direction: Vector2, source: Node) -> void:
+	# Sharaka is only vulnerable to jump attacks (knockdown-type hits).
+	# All other hits should have no effect (no damage, no hit reaction).
+	if damage_data.type != DamageTypes.Type.KNOCKDOWN:
+		return
+
 	super._on_damage_received(damage_data, direction, source)
 	_flash_white()
 
